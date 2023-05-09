@@ -63,15 +63,35 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        add_food_button = new javax.swing.JButton();
+        update_food_button = new javax.swing.JButton();
+        delete_food_button = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+        add_object_button = new javax.swing.JButton();
+        update_object_button = new javax.swing.JButton();
+        delete_object_button = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
+        add_staff_button = new javax.swing.JButton();
+        update_staff_button = new javax.swing.JButton();
+        delete_staff_button = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable4 = new javax.swing.JTable();
+        add_finance_button = new javax.swing.JButton();
+        update_finance_button = new javax.swing.JButton();
+        delete_finance_button = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -335,6 +355,79 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Food-Supply");
 
+        add_food_button.setBackground(new java.awt.Color(237, 203, 118));
+        add_food_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        add_food_button.setForeground(new java.awt.Color(0, 0, 0));
+        add_food_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/add_icon.png"))); // NOI18N
+        add_food_button.setText("Add");
+        add_food_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        add_food_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add_food_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_food_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_food_buttonMouseExited(evt);
+            }
+        });
+        add_food_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_food_buttonActionPerformed(evt);
+            }
+        });
+
+        update_food_button.setBackground(new java.awt.Color(237, 203, 118));
+        update_food_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        update_food_button.setForeground(new java.awt.Color(0, 0, 0));
+        update_food_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/update_icon.png"))); // NOI18N
+        update_food_button.setText("Update");
+        update_food_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        update_food_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        update_food_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                update_food_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                update_food_buttonMouseExited(evt);
+            }
+        });
+        update_food_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_food_buttonActionPerformed(evt);
+            }
+        });
+
+        delete_food_button.setBackground(new java.awt.Color(237, 203, 118));
+        delete_food_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        delete_food_button.setForeground(new java.awt.Color(0, 0, 0));
+        delete_food_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/delete_icon.png"))); // NOI18N
+        delete_food_button.setText("Delete");
+        delete_food_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        delete_food_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        delete_food_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                delete_food_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                delete_food_buttonMouseExited(evt);
+            }
+        });
+        delete_food_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_food_buttonActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Food Type", "Weight", "Price", "Date"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -343,12 +436,32 @@ public class Admin_Resturant extends javax.swing.JFrame {
                 .addGap(526, 526, 526)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(update_food_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_food_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delete_food_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addGap(0, 384, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(add_food_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(update_food_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(delete_food_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 137, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(237, 200, 119));
@@ -357,6 +470,79 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Object-Supply");
 
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Object Type", "Number", "Price", "Date"
+            }
+        ));
+        jScrollPane4.setViewportView(jTable3);
+
+        add_object_button.setBackground(new java.awt.Color(237, 203, 118));
+        add_object_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        add_object_button.setForeground(new java.awt.Color(0, 0, 0));
+        add_object_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/add_icon.png"))); // NOI18N
+        add_object_button.setText("Add");
+        add_object_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        add_object_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add_object_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_object_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_object_buttonMouseExited(evt);
+            }
+        });
+        add_object_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_object_buttonActionPerformed(evt);
+            }
+        });
+
+        update_object_button.setBackground(new java.awt.Color(237, 203, 118));
+        update_object_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        update_object_button.setForeground(new java.awt.Color(0, 0, 0));
+        update_object_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/update_icon.png"))); // NOI18N
+        update_object_button.setText("Update");
+        update_object_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        update_object_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        update_object_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                update_object_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                update_object_buttonMouseExited(evt);
+            }
+        });
+        update_object_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_object_buttonActionPerformed(evt);
+            }
+        });
+
+        delete_object_button.setBackground(new java.awt.Color(237, 203, 118));
+        delete_object_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        delete_object_button.setForeground(new java.awt.Color(0, 0, 0));
+        delete_object_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/delete_icon.png"))); // NOI18N
+        delete_object_button.setText("Delete");
+        delete_object_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        delete_object_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        delete_object_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                delete_object_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                delete_object_buttonMouseExited(evt);
+            }
+        });
+        delete_object_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_object_buttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -364,14 +550,34 @@ public class Admin_Resturant extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(502, 502, 502)
                 .addComponent(jLabel3)
-                .addContainerGap(425, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(update_object_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(add_object_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(delete_object_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addContainerGap(386, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(add_object_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(update_object_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(delete_object_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -406,21 +612,118 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Staff-Schedule");
 
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Name", "Surname", "Role", "Date"
+            }
+        ));
+        jScrollPane3.setViewportView(jTable2);
+
+        add_staff_button.setBackground(new java.awt.Color(237, 203, 118));
+        add_staff_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        add_staff_button.setForeground(new java.awt.Color(0, 0, 0));
+        add_staff_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/add_icon.png"))); // NOI18N
+        add_staff_button.setText("Add");
+        add_staff_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        add_staff_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add_staff_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_staff_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_staff_buttonMouseExited(evt);
+            }
+        });
+        add_staff_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_staff_buttonActionPerformed(evt);
+            }
+        });
+
+        update_staff_button.setBackground(new java.awt.Color(237, 203, 118));
+        update_staff_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        update_staff_button.setForeground(new java.awt.Color(0, 0, 0));
+        update_staff_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/update_icon.png"))); // NOI18N
+        update_staff_button.setText("Update");
+        update_staff_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        update_staff_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        update_staff_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                update_staff_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                update_staff_buttonMouseExited(evt);
+            }
+        });
+        update_staff_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_staff_buttonActionPerformed(evt);
+            }
+        });
+
+        delete_staff_button.setBackground(new java.awt.Color(237, 203, 118));
+        delete_staff_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        delete_staff_button.setForeground(new java.awt.Color(0, 0, 0));
+        delete_staff_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/delete_icon.png"))); // NOI18N
+        delete_staff_button.setText("Delete");
+        delete_staff_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        delete_staff_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        delete_staff_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                delete_staff_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                delete_staff_buttonMouseExited(evt);
+            }
+        });
+        delete_staff_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_staff_buttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+            .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(431, 431, 431))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(431, 431, 431))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(update_staff_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(add_staff_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(delete_staff_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addContainerGap(378, Short.MAX_VALUE))
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(add_staff_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(update_staff_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(delete_staff_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -442,35 +745,133 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Finance");
 
+        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane5.setViewportView(jTable4);
+
+        add_finance_button.setBackground(new java.awt.Color(237, 203, 118));
+        add_finance_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        add_finance_button.setForeground(new java.awt.Color(0, 0, 0));
+        add_finance_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/add_icon.png"))); // NOI18N
+        add_finance_button.setText("Add");
+        add_finance_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        add_finance_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        add_finance_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                add_finance_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                add_finance_buttonMouseExited(evt);
+            }
+        });
+        add_finance_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                add_finance_buttonActionPerformed(evt);
+            }
+        });
+
+        update_finance_button.setBackground(new java.awt.Color(237, 203, 118));
+        update_finance_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        update_finance_button.setForeground(new java.awt.Color(0, 0, 0));
+        update_finance_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/update_icon.png"))); // NOI18N
+        update_finance_button.setText("Update");
+        update_finance_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        update_finance_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        update_finance_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                update_finance_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                update_finance_buttonMouseExited(evt);
+            }
+        });
+        update_finance_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                update_finance_buttonActionPerformed(evt);
+            }
+        });
+
+        delete_finance_button.setBackground(new java.awt.Color(237, 203, 118));
+        delete_finance_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        delete_finance_button.setForeground(new java.awt.Color(0, 0, 0));
+        delete_finance_button.setIcon(new javax.swing.ImageIcon(getClass().getResource("/client_icon/delete_icon.png"))); // NOI18N
+        delete_finance_button.setText("Delete");
+        delete_finance_button.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        delete_finance_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        delete_finance_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                delete_finance_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                delete_finance_buttonMouseExited(evt);
+            }
+        });
+        delete_finance_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                delete_finance_buttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(517, 517, 517))
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(517, 517, 517))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(update_finance_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(add_finance_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(delete_finance_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
-                .addContainerGap(378, Short.MAX_VALUE))
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(add_finance_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(update_finance_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(delete_finance_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -481,7 +882,7 @@ public class Admin_Resturant extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -650,6 +1051,151 @@ public class Admin_Resturant extends javax.swing.JFrame {
         logout_button.setForeground(Color.WHITE);
     }//GEN-LAST:event_logout_buttonMouseEntered
 
+    private void add_food_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_food_buttonMouseEntered
+        add_food_button.setForeground(Color.WHITE);
+    }//GEN-LAST:event_add_food_buttonMouseEntered
+
+    private void add_food_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_food_buttonMouseExited
+        add_food_button.setForeground(Color.BLACK);
+    }//GEN-LAST:event_add_food_buttonMouseExited
+
+    private void add_food_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_food_buttonActionPerformed
+        Add_Client ac = new Add_Client();
+        ac.show();
+    }//GEN-LAST:event_add_food_buttonActionPerformed
+
+    private void update_food_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_food_buttonMouseEntered
+        update_food_button.setForeground(Color.WHITE);
+    }//GEN-LAST:event_update_food_buttonMouseEntered
+
+    private void update_food_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_food_buttonMouseExited
+        update_food_button.setForeground(Color.BLACK);
+    }//GEN-LAST:event_update_food_buttonMouseExited
+
+    private void update_food_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_food_buttonActionPerformed
+       
+    }//GEN-LAST:event_update_food_buttonActionPerformed
+
+    private void delete_food_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_food_buttonMouseEntered
+        delete_food_button.setForeground(Color.WHITE);
+    }//GEN-LAST:event_delete_food_buttonMouseEntered
+
+    private void delete_food_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_food_buttonMouseExited
+        delete_food_button.setForeground(Color.BLACK);
+    }//GEN-LAST:event_delete_food_buttonMouseExited
+
+    private void delete_food_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_food_buttonActionPerformed
+       
+    }//GEN-LAST:event_delete_food_buttonActionPerformed
+
+    private void add_object_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_object_buttonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_object_buttonMouseEntered
+
+    private void add_object_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_object_buttonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_object_buttonMouseExited
+
+    private void add_object_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_object_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_object_buttonActionPerformed
+
+    private void update_object_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_object_buttonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_object_buttonMouseEntered
+
+    private void update_object_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_object_buttonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_object_buttonMouseExited
+
+    private void update_object_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_object_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_object_buttonActionPerformed
+
+    private void delete_object_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_object_buttonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_object_buttonMouseEntered
+
+    private void delete_object_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_object_buttonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_object_buttonMouseExited
+
+    private void delete_object_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_object_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_object_buttonActionPerformed
+
+    private void add_staff_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_staff_buttonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_staff_buttonMouseEntered
+
+    private void add_staff_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_staff_buttonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_staff_buttonMouseExited
+
+    private void add_staff_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_staff_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_staff_buttonActionPerformed
+
+    private void update_staff_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_staff_buttonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_staff_buttonMouseEntered
+
+    private void update_staff_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_staff_buttonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_staff_buttonMouseExited
+
+    private void update_staff_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_staff_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_staff_buttonActionPerformed
+
+    private void delete_staff_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_staff_buttonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_staff_buttonMouseEntered
+
+    private void delete_staff_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_staff_buttonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_staff_buttonMouseExited
+
+    private void delete_staff_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_staff_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_staff_buttonActionPerformed
+
+    private void add_finance_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_finance_buttonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_finance_buttonMouseEntered
+
+    private void add_finance_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_add_finance_buttonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_finance_buttonMouseExited
+
+    private void add_finance_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_finance_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_add_finance_buttonActionPerformed
+
+    private void update_finance_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_finance_buttonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_finance_buttonMouseEntered
+
+    private void update_finance_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_finance_buttonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_finance_buttonMouseExited
+
+    private void update_finance_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_finance_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_update_finance_buttonActionPerformed
+
+    private void delete_finance_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_finance_buttonMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_finance_buttonMouseEntered
+
+    private void delete_finance_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_finance_buttonMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_finance_buttonMouseExited
+
+    private void delete_finance_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_finance_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_delete_finance_buttonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -686,7 +1232,15 @@ public class Admin_Resturant extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add_finance_button;
+    private javax.swing.JButton add_food_button;
+    private javax.swing.JButton add_object_button;
+    private javax.swing.JButton add_staff_button;
     private javax.swing.JButton client_button;
+    private javax.swing.JButton delete_finance_button;
+    private javax.swing.JButton delete_food_button;
+    private javax.swing.JButton delete_object_button;
+    private javax.swing.JButton delete_staff_button;
     private javax.swing.JButton gallery_button;
     private javax.swing.JButton history_button;
     private javax.swing.JLabel jLabel1;
@@ -705,7 +1259,15 @@ public class Admin_Resturant extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
+    private javax.swing.JTable jTable4;
     private javax.swing.JLabel label;
     private javax.swing.JButton logout_button;
     private javax.swing.JButton messages_button;
@@ -714,5 +1276,9 @@ public class Admin_Resturant extends javax.swing.JFrame {
     private javax.swing.JButton restaurant_button;
     private javax.swing.JButton rooms_button;
     private javax.swing.JButton staff_button;
+    private javax.swing.JButton update_finance_button;
+    private javax.swing.JButton update_food_button;
+    private javax.swing.JButton update_object_button;
+    private javax.swing.JButton update_staff_button;
     // End of variables declaration//GEN-END:variables
 }
