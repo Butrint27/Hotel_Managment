@@ -11,6 +11,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import java.sql.*;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -24,6 +27,12 @@ public class Admin_Resturant extends javax.swing.JFrame {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         scaleImage();
+        
+        show_food_table();
+        show_object_table();
+        show_staff_table();
+        
+        
     }
 
    public void scaleImage(){
@@ -33,12 +42,56 @@ public class Admin_Resturant extends javax.swing.JFrame {
         ImageIcon scaledIcon = new ImageIcon(imgScale);
         label.setIcon(scaledIcon);
     }
+    
+   public void show_food_table(){
+       String sql = "SELECT * FROM restaurant_food";
+       
+       try{
+           Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+           PreparedStatement pst = con.prepareStatement(sql);
+           ResultSet rs = pst.executeQuery();
+           DefaultTableModel model = (DefaultTableModel)food_table.getModel();
+            while(rs.next()){
+                model.addRow(new String [] {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)});
+            }            
+       }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+       }
+   }
    
+   public void show_object_table(){
+       String sql = "SELECT * FROM restaurant_object";
+       
+       try{
+           Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+           PreparedStatement pst = con.prepareStatement(sql);
+           ResultSet rs = pst.executeQuery();
+           DefaultTableModel model = (DefaultTableModel)object_table.getModel();
+            while(rs.next()){
+                model.addRow(new String [] {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)});
+            }            
+       }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+       }
+   }
    
-    
-    
-    
-    
+   public void show_staff_table(){
+       String sql = "SELECT * FROM restaurant_staff";
+       
+       try{
+           Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+           PreparedStatement pst = con.prepareStatement(sql);
+           ResultSet rs = pst.executeQuery();
+           DefaultTableModel model = (DefaultTableModel)staff_table.getModel();
+            while(rs.next()){
+                model.addRow(new String [] {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)});
+            }            
+       }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+       }
+   }
+   
+  
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -67,7 +120,7 @@ public class Admin_Resturant extends javax.swing.JFrame {
         update_food_button = new javax.swing.JButton();
         delete_food_button = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        food_table = new javax.swing.JTable();
         price_food_field = new javax.swing.JTextField();
         weight_food_field = new javax.swing.JTextField();
         date_food_field = new javax.swing.JTextField();
@@ -76,7 +129,7 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        object_table = new javax.swing.JTable();
         add_object_button = new javax.swing.JButton();
         update_object_button = new javax.swing.JButton();
         delete_object_button = new javax.swing.JButton();
@@ -90,7 +143,7 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        staff_table = new javax.swing.JTable();
         add_staff_button = new javax.swing.JButton();
         update_staff_button = new javax.swing.JButton();
         delete_staff_button = new javax.swing.JButton();
@@ -103,7 +156,7 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jPanel11 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        finance_table = new javax.swing.JTable();
         add_finance_button = new javax.swing.JButton();
         update_finance_button = new javax.swing.JButton();
         delete_finance_button = new javax.swing.JButton();
@@ -433,7 +486,8 @@ public class Admin_Resturant extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        food_table.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        food_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -441,7 +495,22 @@ public class Admin_Resturant extends javax.swing.JFrame {
                 "ID", "Food Type", "Weight", "Price", "Date"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        food_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                food_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(food_table);
+
+        price_food_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        weight_food_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        date_food_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        id_food_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+
+        food_food_field.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -488,12 +557,13 @@ public class Admin_Resturant extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(delete_food_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(id_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(food_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(weight_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(price_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(date_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(food_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(weight_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(price_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(date_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 84, Short.MAX_VALUE))
         );
 
@@ -503,7 +573,8 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Object-Supply");
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        object_table.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        object_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -511,7 +582,7 @@ public class Admin_Resturant extends javax.swing.JFrame {
                 "ID", "Object Type", "Number", "Price", "Date"
             }
         ));
-        jScrollPane4.setViewportView(jTable3);
+        jScrollPane4.setViewportView(object_table);
 
         add_object_button.setBackground(new java.awt.Color(237, 203, 118));
         add_object_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -622,12 +693,13 @@ public class Admin_Resturant extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(delete_object_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(number_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(id_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(object_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(date_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(price_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(id_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(object_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(price_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
 
@@ -663,18 +735,16 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Staff-Schedule");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        staff_table.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        staff_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Name", "Surname", "Role", "Date"
             }
         ));
-        jScrollPane3.setViewportView(jTable2);
+        jScrollPane3.setViewportView(staff_table);
 
         add_staff_button.setBackground(new java.awt.Color(237, 203, 118));
         add_staff_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -786,12 +856,13 @@ public class Admin_Resturant extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(delete_staff_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(id_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(name_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(surname_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(date_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(role_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(id_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(name_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(surname_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(role_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(65, Short.MAX_VALUE))
         );
 
@@ -814,18 +885,16 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Finance");
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        finance_table.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        finance_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane5.setViewportView(jTable4);
+        jScrollPane5.setViewportView(finance_table);
 
         add_finance_button.setBackground(new java.awt.Color(237, 203, 118));
         add_finance_button.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1142,7 +1211,22 @@ public class Admin_Resturant extends javax.swing.JFrame {
     }//GEN-LAST:event_update_food_buttonMouseExited
 
     private void update_food_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_update_food_buttonActionPerformed
-       
+      String sql = "update restaurant_food set"
+              + " food_type = '" + food_food_field.getText() + "',"
+              + " weight = '" + weight_food_field.getText() + "',"
+              + " price = '" + price_food_field.getText() + "'"
+              + " where id =" + id_food_field.getText();
+      
+        try{
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Update Success");
+           
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+
     }//GEN-LAST:event_update_food_buttonActionPerformed
 
     private void delete_food_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_delete_food_buttonMouseEntered
@@ -1267,6 +1351,16 @@ public class Admin_Resturant extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_delete_finance_buttonActionPerformed
 
+    private void food_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_food_tableMouseClicked
+        int i = food_table.getSelectedRow();
+        TableModel model = food_table.getModel();
+        id_food_field.setText(model.getValueAt(i, 0).toString());
+        food_food_field.setText(model.getValueAt(i,1).toString());
+        weight_food_field.setText(model.getValueAt(i,2).toString());
+        price_food_field.setText(model.getValueAt(i,3).toString());
+        date_food_field.setText(model.getValueAt(i,4).toString());     
+    }//GEN-LAST:event_food_tableMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1315,7 +1409,9 @@ public class Admin_Resturant extends javax.swing.JFrame {
     private javax.swing.JButton delete_food_button;
     private javax.swing.JButton delete_object_button;
     private javax.swing.JButton delete_staff_button;
+    private javax.swing.JTable finance_table;
     private javax.swing.JTextField food_food_field;
+    private javax.swing.JTable food_table;
     private javax.swing.JButton gallery_button;
     private javax.swing.JButton history_button;
     private javax.swing.JTextField id_food_field;
@@ -1342,10 +1438,6 @@ public class Admin_Resturant extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JLabel label;
     private javax.swing.JButton logout_button;
     private javax.swing.JButton messages_button;
@@ -1353,6 +1445,7 @@ public class Admin_Resturant extends javax.swing.JFrame {
     private javax.swing.JButton news_button;
     private javax.swing.JTextField number_object_field;
     private javax.swing.JTextField object_object_field;
+    private javax.swing.JTable object_table;
     private javax.swing.JTextField price_food_field;
     private javax.swing.JTextField price_object_field;
     private javax.swing.JButton profile_button;
@@ -1360,6 +1453,7 @@ public class Admin_Resturant extends javax.swing.JFrame {
     private javax.swing.JTextField role_staff_field;
     private javax.swing.JButton rooms_button;
     private javax.swing.JButton staff_button;
+    private javax.swing.JTable staff_table;
     private javax.swing.JTextField surname_object_field;
     private javax.swing.JButton update_finance_button;
     private javax.swing.JButton update_food_button;

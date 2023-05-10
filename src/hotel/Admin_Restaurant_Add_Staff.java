@@ -232,7 +232,8 @@ public class Admin_Restaurant_Add_Staff extends javax.swing.JFrame {
     }//GEN-LAST:event_listMouseExited
 
     private void listActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listActionPerformed
-        // TODO add your handling code here:
+       Staff_List sl = new Staff_List();
+       sl.show();
     }//GEN-LAST:event_listActionPerformed
 
     /**
