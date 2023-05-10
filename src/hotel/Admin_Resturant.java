@@ -68,6 +68,11 @@ public class Admin_Resturant extends javax.swing.JFrame {
         delete_food_button = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        price_food_field = new javax.swing.JTextField();
+        weight_food_field = new javax.swing.JTextField();
+        date_food_field = new javax.swing.JTextField();
+        id_food_field = new javax.swing.JTextField();
+        food_food_field = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -75,6 +80,11 @@ public class Admin_Resturant extends javax.swing.JFrame {
         add_object_button = new javax.swing.JButton();
         update_object_button = new javax.swing.JButton();
         delete_object_button = new javax.swing.JButton();
+        number_object_field = new javax.swing.JTextField();
+        id_object_field = new javax.swing.JTextField();
+        date_object_field = new javax.swing.JTextField();
+        object_object_field = new javax.swing.JTextField();
+        price_object_field = new javax.swing.JTextField();
         jPanel6 = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -84,6 +94,11 @@ public class Admin_Resturant extends javax.swing.JFrame {
         add_staff_button = new javax.swing.JButton();
         update_staff_button = new javax.swing.JButton();
         delete_staff_button = new javax.swing.JButton();
+        date_staff_field = new javax.swing.JTextField();
+        id_staff_field = new javax.swing.JTextField();
+        name_staff_field = new javax.swing.JTextField();
+        surname_object_field = new javax.swing.JTextField();
+        role_staff_field = new javax.swing.JTextField();
         jPanel10 = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -436,14 +451,25 @@ public class Admin_Resturant extends javax.swing.JFrame {
                 .addGap(526, 526, 526)
                 .addComponent(jLabel2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel4Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(update_food_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(add_food_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(delete_food_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                        .addComponent(id_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(food_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(weight_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(price_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(date_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29))
         );
         jPanel4Layout.setVerticalGroup(
@@ -461,7 +487,14 @@ public class Admin_Resturant extends javax.swing.JFrame {
                         .addComponent(update_food_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(delete_food_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 137, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(id_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(food_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(weight_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(price_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(date_food_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 84, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(237, 200, 119));
@@ -558,7 +591,18 @@ public class Admin_Resturant extends javax.swing.JFrame {
                     .addComponent(add_object_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(delete_object_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(id_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(object_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(number_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(price_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(date_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(31, 31, 31))
         );
         jPanel5Layout.setVerticalGroup(
@@ -577,7 +621,14 @@ public class Admin_Resturant extends javax.swing.JFrame {
                         .addComponent(update_object_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(delete_object_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(number_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(id_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(object_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(date_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(price_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -704,7 +755,18 @@ public class Admin_Resturant extends javax.swing.JFrame {
                             .addComponent(add_staff_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(delete_staff_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(id_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(name_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(surname_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(role_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(date_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(31, 31, 31))))
         );
         jPanel9Layout.setVerticalGroup(
@@ -723,7 +785,14 @@ public class Admin_Resturant extends javax.swing.JFrame {
                         .addComponent(update_staff_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(delete_staff_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(id_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(surname_object_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(date_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(role_staff_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
@@ -864,14 +933,14 @@ public class Admin_Resturant extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -882,7 +951,7 @@ public class Admin_Resturant extends javax.swing.JFrame {
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1060,8 +1129,8 @@ public class Admin_Resturant extends javax.swing.JFrame {
     }//GEN-LAST:event_add_food_buttonMouseExited
 
     private void add_food_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_food_buttonActionPerformed
-        Add_Client ac = new Add_Client();
-        ac.show();
+        Admin_Restaurant_Add_Food araf = new Admin_Restaurant_Add_Food();
+        araf.show();
     }//GEN-LAST:event_add_food_buttonActionPerformed
 
     private void update_food_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_food_buttonMouseEntered
@@ -1097,7 +1166,8 @@ public class Admin_Resturant extends javax.swing.JFrame {
     }//GEN-LAST:event_add_object_buttonMouseExited
 
     private void add_object_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_object_buttonActionPerformed
-        // TODO add your handling code here:
+        Admin_Restaurant_Add_Object arao = new Admin_Restaurant_Add_Object();
+        arao.show();
     }//GEN-LAST:event_add_object_buttonActionPerformed
 
     private void update_object_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_object_buttonMouseEntered
@@ -1133,7 +1203,8 @@ public class Admin_Resturant extends javax.swing.JFrame {
     }//GEN-LAST:event_add_staff_buttonMouseExited
 
     private void add_staff_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_add_staff_buttonActionPerformed
-        // TODO add your handling code here:
+        Admin_Restaurant_Add_Staff aras = new Admin_Restaurant_Add_Staff();
+        aras.show();
     }//GEN-LAST:event_add_staff_buttonActionPerformed
 
     private void update_staff_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_update_staff_buttonMouseEntered
@@ -1237,12 +1308,19 @@ public class Admin_Resturant extends javax.swing.JFrame {
     private javax.swing.JButton add_object_button;
     private javax.swing.JButton add_staff_button;
     private javax.swing.JButton client_button;
+    private javax.swing.JTextField date_food_field;
+    private javax.swing.JTextField date_object_field;
+    private javax.swing.JTextField date_staff_field;
     private javax.swing.JButton delete_finance_button;
     private javax.swing.JButton delete_food_button;
     private javax.swing.JButton delete_object_button;
     private javax.swing.JButton delete_staff_button;
+    private javax.swing.JTextField food_food_field;
     private javax.swing.JButton gallery_button;
     private javax.swing.JButton history_button;
+    private javax.swing.JTextField id_food_field;
+    private javax.swing.JTextField id_object_field;
+    private javax.swing.JTextField id_staff_field;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -1271,14 +1349,22 @@ public class Admin_Resturant extends javax.swing.JFrame {
     private javax.swing.JLabel label;
     private javax.swing.JButton logout_button;
     private javax.swing.JButton messages_button;
+    private javax.swing.JTextField name_staff_field;
     private javax.swing.JButton news_button;
+    private javax.swing.JTextField number_object_field;
+    private javax.swing.JTextField object_object_field;
+    private javax.swing.JTextField price_food_field;
+    private javax.swing.JTextField price_object_field;
     private javax.swing.JButton profile_button;
     private javax.swing.JButton restaurant_button;
+    private javax.swing.JTextField role_staff_field;
     private javax.swing.JButton rooms_button;
     private javax.swing.JButton staff_button;
+    private javax.swing.JTextField surname_object_field;
     private javax.swing.JButton update_finance_button;
     private javax.swing.JButton update_food_button;
     private javax.swing.JButton update_object_button;
     private javax.swing.JButton update_staff_button;
+    private javax.swing.JTextField weight_food_field;
     // End of variables declaration//GEN-END:variables
 }
