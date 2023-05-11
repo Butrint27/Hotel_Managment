@@ -33,7 +33,7 @@ public class User_Area extends javax.swing.JFrame {
     }
     
     public void welcomeImage(){
-        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment\\src\\img\\hotel_prishtina_logo.png");
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\img\\hotel_prishtina_logo.png");
         Image img = icon.getImage();
         Image imgScale = img.getScaledInstance(welcome_label.getWidth(), welcome_label.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);

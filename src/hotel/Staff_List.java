@@ -79,6 +79,7 @@ public class Staff_List extends javax.swing.JFrame {
             }
         });
 
+        tblStaff.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         tblStaff.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

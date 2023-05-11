@@ -43,6 +43,8 @@ public class Admin_Restaurant_Add_Staff extends javax.swing.JFrame {
         confirm = new javax.swing.JButton();
         role_field = new javax.swing.JComboBox<>();
         list = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        price_field = new javax.swing.JTextField();
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -104,7 +106,7 @@ public class Admin_Restaurant_Add_Staff extends javax.swing.JFrame {
         });
 
         role_field.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        role_field.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cheff", "Cooker", "Waiter", "Jenitor" }));
+        role_field.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cheff", "Cooker", "Waiter", "Jenitor", "Dish Washer" }));
 
         list.setBackground(new java.awt.Color(255, 255, 255));
         list.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -125,6 +127,12 @@ public class Admin_Restaurant_Add_Staff extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Price:");
+
+        price_field.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -139,6 +147,7 @@ public class Admin_Restaurant_Add_Staff extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(54, 54, 54)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(price_field, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(role_field, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(surname_field, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +156,8 @@ public class Admin_Restaurant_Add_Staff extends javax.swing.JFrame {
                             .addGap(26, 26, 26)
                             .addComponent(name_field, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jLabel5)
-                        .addComponent(jLabel6)))
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel7)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -166,7 +176,11 @@ public class Admin_Restaurant_Add_Staff extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(role_field, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 248, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(price_field, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(list, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -200,11 +214,12 @@ public class Admin_Restaurant_Add_Staff extends javax.swing.JFrame {
             String name = name_field.getText();
             String surname = surname_field.getText();
             String role = role_field.getSelectedItem().toString();
+            String price = price_field.getText();
 
         try{
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
 
-            String query = "call restaurant_staff_procedure('" + name + "','" + surname + "','" + role + "')";
+            String query = "call restaurant_staff_procedure('" + name + "','" + surname + "','" + role + "','" + price + "')";
 
             Statement stmt = con.createStatement();
             int x = stmt.executeUpdate(query);
@@ -277,10 +292,12 @@ public class Admin_Restaurant_Add_Staff extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton list;
     private javax.swing.JTextField name_field;
+    private javax.swing.JTextField price_field;
     private javax.swing.JComboBox<String> role_field;
     private javax.swing.JTextField surname_field;
     // End of variables declaration//GEN-END:variables
