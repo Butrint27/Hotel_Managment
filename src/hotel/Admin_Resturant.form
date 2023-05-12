@@ -216,6 +216,7 @@
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="gallery_buttonMouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="gallery_buttonMouseExited"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="gallery_buttonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="news_button">
@@ -484,7 +485,6 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                       <Component id="id_food_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -523,12 +523,14 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="food_food_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="price_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="date_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="id_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="weight_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="price_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="date_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="id_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="weight_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace min="0" pref="84" max="32767" attributes="0"/>
                           </Group>
@@ -770,12 +772,14 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="id_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="object_object_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="price_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="number_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="date_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="id_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="price_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="number_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="date_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace pref="71" max="32767" attributes="0"/>
                           </Group>
@@ -1060,9 +1064,9 @@
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="date_staff_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="name_staff_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="id_staff_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="name_staff_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="role_staff_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="surname_staff_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                       <Component id="price_staff_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -1336,14 +1340,16 @@
                                   </Group>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="eletricity_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="water_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="health_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="state_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="phone_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="id_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="building_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="eletricity_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="water_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="health_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="phone_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="id_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="building_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="date_field" min="-2" pref="35" max="-2" attributes="0"/>

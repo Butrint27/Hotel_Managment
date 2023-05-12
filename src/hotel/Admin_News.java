@@ -210,6 +210,11 @@ public class Admin_News extends javax.swing.JFrame {
                 gallery_buttonMouseExited(evt);
             }
         });
+        gallery_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gallery_buttonActionPerformed(evt);
+            }
+        });
 
         news_button.setBackground(new java.awt.Color(237, 200, 119));
         news_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -915,6 +920,12 @@ public class Admin_News extends javax.swing.JFrame {
         ah.show();
         dispose();
     }//GEN-LAST:event_history_buttonActionPerformed
+
+    private void gallery_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallery_buttonActionPerformed
+        Admin_Gallery ag = new Admin_Gallery();
+        ag.show();
+        dispose();
+    }//GEN-LAST:event_gallery_buttonActionPerformed
 
     /**
      * @param args the command line arguments
