@@ -275,6 +275,11 @@ public class User_News extends javax.swing.JFrame {
                 contact_buttonMouseExited(evt);
             }
         });
+        contact_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contact_buttonActionPerformed(evt);
+            }
+        });
 
         history_button.setBackground(new java.awt.Color(237, 200, 119));
         history_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -740,6 +745,12 @@ public class User_News extends javax.swing.JFrame {
     private void refresh_btn2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refresh_btn2MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_refresh_btn2MouseExited
+
+    private void contact_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contact_buttonActionPerformed
+       User_Contact uc = new User_Contact();
+       uc.show();
+       dispose();
+    }//GEN-LAST:event_contact_buttonActionPerformed
 
     /**
      * @param args the command line arguments

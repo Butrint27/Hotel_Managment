@@ -387,6 +387,11 @@ public class User_Gallery extends javax.swing.JFrame {
                 contact_buttonMouseExited(evt);
             }
         });
+        contact_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contact_buttonActionPerformed(evt);
+            }
+        });
 
         history_button.setBackground(new java.awt.Color(237, 200, 119));
         history_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -711,6 +716,12 @@ public class User_Gallery extends javax.swing.JFrame {
     private void booking_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_buttonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_booking_buttonActionPerformed
+
+    private void contact_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contact_buttonActionPerformed
+        User_Contact uc = new User_Contact();
+        uc.show();
+        dispose();
+    }//GEN-LAST:event_contact_buttonActionPerformed
 
     /**
      * @param args the command line arguments
