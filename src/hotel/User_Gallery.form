@@ -49,6 +49,26 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel3" max="32767" attributes="0"/>
                       <Component id="gallery_header" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="label_2" pref="350" max="32767" attributes="0"/>
+                              <Component id="label_1" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="label_4" min="-2" pref="350" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="label_6" min="-2" pref="350" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="label_3" min="-2" pref="350" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="label_5" min="-2" pref="350" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
           </Group>
@@ -59,8 +79,24 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="gallery_header" min="-2" pref="150" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="label_1" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="label_3" min="-2" pref="200" max="-2" attributes="0"/>
+                      <Component id="label_5" min="-2" pref="200" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label_2" alignment="1" min="-2" pref="200" max="-2" attributes="0"/>
+                              <Component id="label_4" alignment="0" min="-2" pref="200" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="label_6" min="-2" pref="200" max="-2" attributes="0"/>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -105,7 +141,7 @@
                       <Component id="history_button" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="profile_button" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace pref="122" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="logout_button" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -210,6 +246,7 @@
               <Events>
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="booking_buttonMouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="booking_buttonMouseExited"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="booking_buttonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="news_button">
@@ -529,6 +566,18 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JLabel" name="label_3">
+        </Component>
+        <Component class="javax.swing.JLabel" name="label_2">
+        </Component>
+        <Component class="javax.swing.JLabel" name="label_1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="label_6">
+        </Component>
+        <Component class="javax.swing.JLabel" name="label_4">
+        </Component>
+        <Component class="javax.swing.JLabel" name="label_5">
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

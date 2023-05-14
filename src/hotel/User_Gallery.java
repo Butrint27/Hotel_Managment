@@ -7,8 +7,13 @@ package hotel;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Image;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,6 +31,140 @@ public class User_Gallery extends javax.swing.JFrame {
         
         scaleImage();
         galleryHeader();
+        
+        gallery_1();
+        gallery_2();
+        gallery_3();
+        gallery_4();
+        gallery_5();
+        gallery_6();
+        
+        
+        try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM gallery_1 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("galleryFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_1.getWidth(), label_1.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_1.setIcon(newImage);
+             }
+             
+             
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+        
+        try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM gallery_2 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("galleryFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_2.getWidth(), label_2.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_2.setIcon(newImage);
+             }
+             
+             
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+        
+        try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM gallery_3 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("galleryFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_3.getWidth(), label_3.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_3.setIcon(newImage);
+             }
+             
+             
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+        
+        try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM gallery_4 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("galleryFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_4.getWidth(), label_4.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_4.setIcon(newImage);
+             }
+             
+             
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+        
+        try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM gallery_5 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("galleryFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_5.getWidth(), label_5.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_5.setIcon(newImage);
+             }
+             
+                       
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+        
+        try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM gallery_6 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("galleryFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_6.getWidth(), label_6.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_6.setIcon(newImage);
+             }
+             
+             
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
     }
     
      public void scaleImage(){
@@ -42,6 +181,54 @@ public class User_Gallery extends javax.swing.JFrame {
         Image imgScale = img.getScaledInstance(gallery_header.getWidth(), gallery_header.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
         gallery_header.setIcon(scaledIcon);
+    }
+      
+      public void gallery_1(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_1.getWidth(), label_1.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_1.setIcon(scaledIcon);
+    }
+      
+       public void gallery_2(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_2.getWidth(), label_2.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_2.setIcon(scaledIcon);
+    }
+       
+       public void gallery_3(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_3.getWidth(), label_3.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_3.setIcon(scaledIcon);
+    }
+       
+        public void gallery_4(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_4.getWidth(), label_4.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_4.setIcon(scaledIcon);
+    }
+       
+        public void gallery_5(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_5.getWidth(), label_5.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_5.setIcon(scaledIcon);
+    }
+        
+         public void gallery_6(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_6.getWidth(), label_6.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_6.setIcon(scaledIcon);
     }
 
     /**
@@ -78,6 +265,12 @@ public class User_Gallery extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        label_3 = new javax.swing.JLabel();
+        label_2 = new javax.swing.JLabel();
+        label_1 = new javax.swing.JLabel();
+        label_6 = new javax.swing.JLabel();
+        label_4 = new javax.swing.JLabel();
+        label_5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -152,6 +345,11 @@ public class User_Gallery extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 booking_buttonMouseExited(evt);
+            }
+        });
+        booking_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                booking_buttonActionPerformed(evt);
             }
         });
 
@@ -252,7 +450,7 @@ public class User_Gallery extends javax.swing.JFrame {
                 .addComponent(history_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(profile_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logout_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -375,7 +573,22 @@ public class User_Gallery extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(gallery_header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(gallery_header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(label_2, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)
+                            .addComponent(label_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(label_4, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(label_6, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(label_3, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(label_5, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -383,8 +596,20 @@ public class User_Gallery extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(gallery_header, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_3, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_5, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label_4, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_6, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -483,6 +708,10 @@ public class User_Gallery extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_news_buttonActionPerformed
 
+    private void booking_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_booking_buttonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -540,6 +769,12 @@ public class User_Gallery extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel label;
+    private javax.swing.JLabel label_1;
+    private javax.swing.JLabel label_2;
+    private javax.swing.JLabel label_3;
+    private javax.swing.JLabel label_4;
+    private javax.swing.JLabel label_5;
+    private javax.swing.JLabel label_6;
     private javax.swing.JButton logout_button;
     private javax.swing.JButton news_button;
     private javax.swing.JButton profile_button;

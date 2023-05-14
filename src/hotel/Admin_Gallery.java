@@ -7,25 +7,62 @@ package hotel;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Image;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Butrint Bajrami
  */
 public class Admin_Gallery extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Admin_Gallery
-     */
+     File f = null;
+     String path = null;
+     private ImageIcon format = null;
+     String fname = null;
+     int s = 0;
+     
+     Connection con;
+     PreparedStatement pst;
+     ResultSet rs;
+    
+    
+    
     public Admin_Gallery() {
         FlatLightLaf.setup();
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         scaleImage();
+        
+        gallery_1();
+        gallery_2();
+        gallery_3();
+        gallery_4();
+        gallery_5();
+        gallery_6();
+        
+        Connect();
+        
+        imagePath.setVisible(false);
        
     }
+    
+    public void Connect(){
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+        }catch(Exception e){
+            
+        }
+    }
+    
+    
 
      public void scaleImage(){
         ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\img\\hotel_prishtina_logo.png");
@@ -33,6 +70,54 @@ public class Admin_Gallery extends javax.swing.JFrame {
         Image imgScale = img.getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
         label.setIcon(scaledIcon);
+    }
+     
+     public void gallery_1(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_1.getWidth(), label_1.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_1.setIcon(scaledIcon);
+    }
+     
+      public void gallery_2(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_2.getWidth(), label_2.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_2.setIcon(scaledIcon);
+    }
+      
+       public void gallery_3(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_3.getWidth(), label_3.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_3.setIcon(scaledIcon);
+    }
+       
+        public void gallery_4(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_4.getWidth(), label_4.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_4.setIcon(scaledIcon);
+    }
+        
+         public void gallery_5(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_5.getWidth(), label_5.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_5.setIcon(scaledIcon);
+    }
+         
+          public void gallery_6(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_6.getWidth(), label_6.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_6.setIcon(scaledIcon);
     }
      
      
@@ -62,6 +147,25 @@ public class Admin_Gallery extends javax.swing.JFrame {
         profile_button = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        label_3 = new javax.swing.JLabel();
+        label_1 = new javax.swing.JLabel();
+        label_2 = new javax.swing.JLabel();
+        browse_1 = new javax.swing.JButton();
+        save_1 = new javax.swing.JButton();
+        browse_2 = new javax.swing.JButton();
+        save_2 = new javax.swing.JButton();
+        browse_3 = new javax.swing.JButton();
+        save_3 = new javax.swing.JButton();
+        label_4 = new javax.swing.JLabel();
+        label_5 = new javax.swing.JLabel();
+        label_6 = new javax.swing.JLabel();
+        browse_4 = new javax.swing.JButton();
+        save_4 = new javax.swing.JButton();
+        browse_5 = new javax.swing.JButton();
+        save_5 = new javax.swing.JButton();
+        browse_6 = new javax.swing.JButton();
+        save_6 = new javax.swing.JButton();
+        imagePath = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -312,7 +416,7 @@ public class Admin_Gallery extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1250, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,20 +426,323 @@ public class Admin_Gallery extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
+        browse_1.setBackground(new java.awt.Color(237, 200, 119));
+        browse_1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        browse_1.setForeground(new java.awt.Color(0, 0, 0));
+        browse_1.setText("Browse");
+        browse_1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        browse_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                browse_1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                browse_1MouseExited(evt);
+            }
+        });
+        browse_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                browse_1ActionPerformed(evt);
+            }
+        });
+
+        save_1.setBackground(new java.awt.Color(237, 200, 119));
+        save_1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        save_1.setForeground(new java.awt.Color(0, 0, 0));
+        save_1.setText("Save");
+        save_1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        save_1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                save_1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                save_1MouseExited(evt);
+            }
+        });
+        save_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save_1ActionPerformed(evt);
+            }
+        });
+
+        browse_2.setBackground(new java.awt.Color(237, 200, 119));
+        browse_2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        browse_2.setForeground(new java.awt.Color(0, 0, 0));
+        browse_2.setText("Browse");
+        browse_2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        browse_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                browse_2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                browse_2MouseExited(evt);
+            }
+        });
+        browse_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                browse_2ActionPerformed(evt);
+            }
+        });
+
+        save_2.setBackground(new java.awt.Color(237, 200, 119));
+        save_2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        save_2.setForeground(new java.awt.Color(0, 0, 0));
+        save_2.setText("Save");
+        save_2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        save_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                save_2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                save_2MouseExited(evt);
+            }
+        });
+        save_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save_2ActionPerformed(evt);
+            }
+        });
+
+        browse_3.setBackground(new java.awt.Color(237, 200, 119));
+        browse_3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        browse_3.setForeground(new java.awt.Color(0, 0, 0));
+        browse_3.setText("Browse");
+        browse_3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        browse_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                browse_3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                browse_3MouseExited(evt);
+            }
+        });
+        browse_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                browse_3ActionPerformed(evt);
+            }
+        });
+
+        save_3.setBackground(new java.awt.Color(237, 200, 119));
+        save_3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        save_3.setForeground(new java.awt.Color(0, 0, 0));
+        save_3.setText("Save");
+        save_3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        save_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                save_3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                save_3MouseExited(evt);
+            }
+        });
+        save_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save_3ActionPerformed(evt);
+            }
+        });
+
+        browse_4.setBackground(new java.awt.Color(237, 200, 119));
+        browse_4.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        browse_4.setForeground(new java.awt.Color(0, 0, 0));
+        browse_4.setText("Browse");
+        browse_4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        browse_4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                browse_4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                browse_4MouseExited(evt);
+            }
+        });
+        browse_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                browse_4ActionPerformed(evt);
+            }
+        });
+
+        save_4.setBackground(new java.awt.Color(237, 200, 119));
+        save_4.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        save_4.setForeground(new java.awt.Color(0, 0, 0));
+        save_4.setText("Save");
+        save_4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        save_4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                save_4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                save_4MouseExited(evt);
+            }
+        });
+        save_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save_4ActionPerformed(evt);
+            }
+        });
+
+        browse_5.setBackground(new java.awt.Color(237, 200, 119));
+        browse_5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        browse_5.setForeground(new java.awt.Color(0, 0, 0));
+        browse_5.setText("Browse");
+        browse_5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        browse_5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                browse_5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                browse_5MouseExited(evt);
+            }
+        });
+        browse_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                browse_5ActionPerformed(evt);
+            }
+        });
+
+        save_5.setBackground(new java.awt.Color(237, 200, 119));
+        save_5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        save_5.setForeground(new java.awt.Color(0, 0, 0));
+        save_5.setText("Save");
+        save_5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        save_5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                save_5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                save_5MouseExited(evt);
+            }
+        });
+        save_5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save_5ActionPerformed(evt);
+            }
+        });
+
+        browse_6.setBackground(new java.awt.Color(237, 200, 119));
+        browse_6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        browse_6.setForeground(new java.awt.Color(0, 0, 0));
+        browse_6.setText("Browse");
+        browse_6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        browse_6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                browse_6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                browse_6MouseExited(evt);
+            }
+        });
+        browse_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                browse_6ActionPerformed(evt);
+            }
+        });
+
+        save_6.setBackground(new java.awt.Color(237, 200, 119));
+        save_6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        save_6.setForeground(new java.awt.Color(0, 0, 0));
+        save_6.setText("Save");
+        save_6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        save_6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                save_6MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                save_6MouseExited(evt);
+            }
+        });
+        save_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save_6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(browse_1)
+                        .addGap(18, 18, 18)
+                        .addComponent(save_1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
+                        .addComponent(browse_2)
+                        .addGap(18, 18, 18)
+                        .addComponent(save_2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(268, 268, 268)
+                        .addComponent(browse_3)
+                        .addGap(18, 18, 18)
+                        .addComponent(save_3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(100, 100, 100))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(label_4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(label_1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(label_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(label_5, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
+                                .addGap(78, 78, 78)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(label_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(label_6, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
+                                .addContainerGap())))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(imagePath)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(browse_4)
+                                .addGap(18, 18, 18)
+                                .addComponent(save_4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(265, 265, 265)
+                                .addComponent(browse_5)
+                                .addGap(18, 18, 18)
+                                .addComponent(save_5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(browse_6)
+                        .addGap(18, 18, 18)
+                        .addComponent(save_6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(103, 103, 103))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(59, 59, 59)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(browse_1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(save_1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(browse_2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(save_2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(browse_3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(save_3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(label_6, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(label_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(label_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(browse_4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(save_4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(browse_5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(save_5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(browse_6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(save_6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(imagePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -481,6 +888,349 @@ public class Admin_Gallery extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_profile_buttonActionPerformed
 
+    private void browse_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_1MouseEntered
+        browse_1.setForeground(Color.WHITE);
+    }//GEN-LAST:event_browse_1MouseEntered
+
+    private void browse_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_1MouseExited
+        browse_1.setForeground(Color.BLACK);
+    }//GEN-LAST:event_browse_1MouseExited
+
+    private void browse_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_1ActionPerformed
+          JFileChooser fileChooser = new JFileChooser();
+          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+          fileChooser.addChoosableFileFilter(fnwf);
+          int load = fileChooser.showOpenDialog(null);
+          
+          if(load==fileChooser.APPROVE_OPTION){
+             f = fileChooser.getSelectedFile();
+             path = f.getAbsolutePath();
+             imagePath.setText(path);
+             ImageIcon ii = new ImageIcon(path);
+             Image img = ii.getImage().getScaledInstance(label_1.getWidth(),label_1.getHeight(), Image.SCALE_SMOOTH);
+             label_1.setIcon(new ImageIcon(img));
+             
+          }
+    }//GEN-LAST:event_browse_1ActionPerformed
+
+    private void save_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_1MouseEntered
+        save_1.setForeground(Color.WHITE);
+    }//GEN-LAST:event_save_1MouseEntered
+
+    private void save_1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_1MouseExited
+        save_1.setForeground(Color.BLACK);
+    }//GEN-LAST:event_save_1MouseExited
+
+    private void save_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_1ActionPerformed
+        System.out.println("Image Path - " + path);
+        System.out.println("Image Name - " + f.getName());
+        File f = new File(path);
+        
+        try{
+             InputStream is = new FileInputStream(f);
+             
+             pst = con.prepareStatement("INSERT INTO gallery_1(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
+             pst.setString(1, f.getName());
+             pst.setString(2, path);
+             pst.setBlob(3, is);
+             
+             int inserted = pst.executeUpdate();
+             
+             if(inserted > 0){
+                 JOptionPane.showMessageDialog(null,"Image inserted successful");
+             }
+               
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_save_1ActionPerformed
+
+    private void browse_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_2MouseEntered
+        browse_2.setForeground(Color.WHITE);
+    }//GEN-LAST:event_browse_2MouseEntered
+
+    private void browse_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_2MouseExited
+        browse_2.setForeground(Color.BLACK);
+    }//GEN-LAST:event_browse_2MouseExited
+
+    private void browse_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_2ActionPerformed
+       JFileChooser fileChooser = new JFileChooser();
+          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+          fileChooser.addChoosableFileFilter(fnwf);
+          int load = fileChooser.showOpenDialog(null);
+          
+          if(load==fileChooser.APPROVE_OPTION){
+             f = fileChooser.getSelectedFile();
+             path = f.getAbsolutePath();
+             imagePath.setText(path);
+             ImageIcon ii = new ImageIcon(path);
+             Image img = ii.getImage().getScaledInstance(label_2.getWidth(),label_2.getHeight(), Image.SCALE_SMOOTH);
+             label_2.setIcon(new ImageIcon(img));
+             
+          }
+    }//GEN-LAST:event_browse_2ActionPerformed
+
+    private void save_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_2MouseEntered
+        save_2.setForeground(Color.WHITE);
+    }//GEN-LAST:event_save_2MouseEntered
+
+    private void save_2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_2MouseExited
+        save_2.setForeground(Color.BLACK);
+    }//GEN-LAST:event_save_2MouseExited
+
+    private void save_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_2ActionPerformed
+        System.out.println("Image Path - " + path);
+        System.out.println("Image Name - " + f.getName());
+        File f = new File(path);
+        
+        try{
+             InputStream is = new FileInputStream(f);
+             
+             pst = con.prepareStatement("INSERT INTO gallery_2(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
+             pst.setString(1, f.getName());
+             pst.setString(2, path);
+             pst.setBlob(3, is);
+             
+             int inserted = pst.executeUpdate();
+             
+             if(inserted > 0){
+                 JOptionPane.showMessageDialog(null,"Image inserted successful");
+             }
+               
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_save_2ActionPerformed
+
+    private void browse_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_3MouseEntered
+        browse_3.setForeground(Color.WHITE);
+    }//GEN-LAST:event_browse_3MouseEntered
+
+    private void browse_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_3MouseExited
+        browse_3.setForeground(Color.BLACK);
+    }//GEN-LAST:event_browse_3MouseExited
+
+    private void browse_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_3ActionPerformed
+          JFileChooser fileChooser = new JFileChooser();
+          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+          fileChooser.addChoosableFileFilter(fnwf);
+          int load = fileChooser.showOpenDialog(null);
+          
+          if(load==fileChooser.APPROVE_OPTION){
+             f = fileChooser.getSelectedFile();
+             path = f.getAbsolutePath();
+             imagePath.setText(path);
+             ImageIcon ii = new ImageIcon(path);
+             Image img = ii.getImage().getScaledInstance(label_3.getWidth(),label_3.getHeight(), Image.SCALE_SMOOTH);
+             label_3.setIcon(new ImageIcon(img));
+             
+          }
+    }//GEN-LAST:event_browse_3ActionPerformed
+
+    private void save_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_3MouseEntered
+         save_3.setForeground(Color.WHITE);
+    }//GEN-LAST:event_save_3MouseEntered
+
+    private void save_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_3MouseExited
+        save_3.setForeground(Color.BLACK);
+    }//GEN-LAST:event_save_3MouseExited
+
+    private void save_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_3ActionPerformed
+       System.out.println("Image Path - " + path);
+        System.out.println("Image Name - " + f.getName());
+        File f = new File(path);
+        
+        try{
+             InputStream is = new FileInputStream(f);
+             
+             pst = con.prepareStatement("INSERT INTO gallery_3(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
+             pst.setString(1, f.getName());
+             pst.setString(2, path);
+             pst.setBlob(3, is);
+             
+             int inserted = pst.executeUpdate();
+             
+             if(inserted > 0){
+                 JOptionPane.showMessageDialog(null,"Image inserted successful");
+             }
+               
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_save_3ActionPerformed
+
+    private void browse_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_4MouseEntered
+        browse_4.setForeground(Color.WHITE);
+    }//GEN-LAST:event_browse_4MouseEntered
+
+    private void browse_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_4MouseExited
+        browse_4.setForeground(Color.BLACK);
+    }//GEN-LAST:event_browse_4MouseExited
+
+    private void browse_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_4ActionPerformed
+          JFileChooser fileChooser = new JFileChooser();
+          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+          fileChooser.addChoosableFileFilter(fnwf);
+          int load = fileChooser.showOpenDialog(null);
+          
+          if(load==fileChooser.APPROVE_OPTION){
+             f = fileChooser.getSelectedFile();
+             path = f.getAbsolutePath();
+             imagePath.setText(path);
+             ImageIcon ii = new ImageIcon(path);
+             Image img = ii.getImage().getScaledInstance(label_4.getWidth(),label_4.getHeight(), Image.SCALE_SMOOTH);
+             label_4.setIcon(new ImageIcon(img));
+             
+          }
+    }//GEN-LAST:event_browse_4ActionPerformed
+
+    private void save_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_4MouseEntered
+        save_4.setForeground(Color.WHITE);
+    }//GEN-LAST:event_save_4MouseEntered
+
+    private void save_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_4MouseExited
+       save_4.setForeground(Color.BLACK);
+    }//GEN-LAST:event_save_4MouseExited
+
+    private void save_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_4ActionPerformed
+        System.out.println("Image Path - " + path);
+        System.out.println("Image Name - " + f.getName());
+        File f = new File(path);
+        
+        try{
+             InputStream is = new FileInputStream(f);
+             
+             pst = con.prepareStatement("INSERT INTO gallery_4(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
+             pst.setString(1, f.getName());
+             pst.setString(2, path);
+             pst.setBlob(3, is);
+             
+             int inserted = pst.executeUpdate();
+             
+             if(inserted > 0){
+                 JOptionPane.showMessageDialog(null,"Image inserted successful");
+             }
+               
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_save_4ActionPerformed
+
+    private void browse_5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_5MouseEntered
+        browse_5.setForeground(Color.WHITE);
+    }//GEN-LAST:event_browse_5MouseEntered
+
+    private void browse_5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_5MouseExited
+        browse_5.setForeground(Color.BLACK);
+    }//GEN-LAST:event_browse_5MouseExited
+
+    private void browse_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_5ActionPerformed
+          JFileChooser fileChooser = new JFileChooser();
+          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+          fileChooser.addChoosableFileFilter(fnwf);
+          int load = fileChooser.showOpenDialog(null);
+          
+          if(load==fileChooser.APPROVE_OPTION){
+             f = fileChooser.getSelectedFile();
+             path = f.getAbsolutePath();
+             imagePath.setText(path);
+             ImageIcon ii = new ImageIcon(path);
+             Image img = ii.getImage().getScaledInstance(label_5.getWidth(),label_5.getHeight(), Image.SCALE_SMOOTH);
+             label_5.setIcon(new ImageIcon(img));
+             
+          }
+    }//GEN-LAST:event_browse_5ActionPerformed
+
+    private void save_5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_5MouseEntered
+        save_5.setForeground(Color.WHITE);
+    }//GEN-LAST:event_save_5MouseEntered
+
+    private void save_5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_5MouseExited
+        save_5.setForeground(Color.BLACK);
+    }//GEN-LAST:event_save_5MouseExited
+
+    private void save_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_5ActionPerformed
+        System.out.println("Image Path - " + path);
+        System.out.println("Image Name - " + f.getName());
+        File f = new File(path);
+        
+        try{
+             InputStream is = new FileInputStream(f);
+             
+             pst = con.prepareStatement("INSERT INTO gallery_5(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
+             pst.setString(1, f.getName());
+             pst.setString(2, path);
+             pst.setBlob(3, is);
+             
+             int inserted = pst.executeUpdate();
+             
+             if(inserted > 0){
+                 JOptionPane.showMessageDialog(null,"Image inserted successful");
+             }
+               
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_save_5ActionPerformed
+
+    private void browse_6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_6MouseEntered
+        browse_6.setForeground(Color.WHITE);
+    }//GEN-LAST:event_browse_6MouseEntered
+
+    private void browse_6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_6MouseExited
+        browse_6.setForeground(Color.BLACK);
+    }//GEN-LAST:event_browse_6MouseExited
+
+    private void browse_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_6ActionPerformed
+       JFileChooser fileChooser = new JFileChooser();
+          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+          fileChooser.addChoosableFileFilter(fnwf);
+          int load = fileChooser.showOpenDialog(null);
+          
+          if(load==fileChooser.APPROVE_OPTION){
+             f = fileChooser.getSelectedFile();
+             path = f.getAbsolutePath();
+             imagePath.setText(path);
+             ImageIcon ii = new ImageIcon(path);
+             Image img = ii.getImage().getScaledInstance(label_6.getWidth(),label_6.getHeight(), Image.SCALE_SMOOTH);
+             label_6.setIcon(new ImageIcon(img));
+             
+          }
+    }//GEN-LAST:event_browse_6ActionPerformed
+
+    private void save_6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_6MouseEntered
+         save_6.setForeground(Color.WHITE);
+    }//GEN-LAST:event_save_6MouseEntered
+
+    private void save_6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_6MouseExited
+        save_6.setForeground(Color.BLACK);
+    }//GEN-LAST:event_save_6MouseExited
+
+    private void save_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_6ActionPerformed
+        System.out.println("Image Path - " + path);
+        System.out.println("Image Name - " + f.getName());
+        File f = new File(path);
+        
+        try{
+             InputStream is = new FileInputStream(f);
+             
+             pst = con.prepareStatement("INSERT INTO gallery_6(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
+             pst.setString(1, f.getName());
+             pst.setString(2, path);
+             pst.setBlob(3, is);
+             
+             int inserted = pst.executeUpdate();
+             
+             if(inserted > 0){
+                 JOptionPane.showMessageDialog(null,"Image inserted successful");
+             }
+               
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_save_6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -517,21 +1267,43 @@ public class Admin_Gallery extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton browse_1;
+    private javax.swing.JButton browse_2;
+    private javax.swing.JButton browse_3;
+    private javax.swing.JButton browse_4;
+    private javax.swing.JButton browse_5;
+    private javax.swing.JButton browse_6;
     private javax.swing.JButton client_button;
     private javax.swing.JButton confirm;
+    private javax.swing.JButton confirm1;
+    private javax.swing.JButton confirm2;
+    private javax.swing.JButton confirm3;
     private javax.swing.JButton gallery_button;
     private javax.swing.JButton history_button;
+    private javax.swing.JTextField imagePath;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel label;
+    private javax.swing.JLabel label_1;
+    private javax.swing.JLabel label_2;
+    private javax.swing.JLabel label_3;
+    private javax.swing.JLabel label_4;
+    private javax.swing.JLabel label_5;
+    private javax.swing.JLabel label_6;
     private javax.swing.JButton logout_button;
     private javax.swing.JButton messages_button;
     private javax.swing.JButton news_button;
     private javax.swing.JButton profile_button;
     private javax.swing.JButton restaurant_button;
     private javax.swing.JButton rooms_button;
+    private javax.swing.JButton save_1;
+    private javax.swing.JButton save_2;
+    private javax.swing.JButton save_3;
+    private javax.swing.JButton save_4;
+    private javax.swing.JButton save_5;
+    private javax.swing.JButton save_6;
     private javax.swing.JButton staff_button;
     // End of variables declaration//GEN-END:variables
 }
