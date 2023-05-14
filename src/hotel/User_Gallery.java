@@ -249,8 +249,6 @@ public class User_Gallery extends javax.swing.JFrame {
         booking_button = new javax.swing.JButton();
         news_button = new javax.swing.JButton();
         contact_button = new javax.swing.JButton();
-        history_button = new javax.swing.JButton();
-        profile_button = new javax.swing.JButton();
         gallery_header = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -393,36 +391,6 @@ public class User_Gallery extends javax.swing.JFrame {
             }
         });
 
-        history_button.setBackground(new java.awt.Color(237, 200, 119));
-        history_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        history_button.setForeground(new java.awt.Color(0, 0, 0));
-        history_button.setText("History");
-        history_button.setBorder(null);
-        history_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        history_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                history_buttonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                history_buttonMouseExited(evt);
-            }
-        });
-
-        profile_button.setBackground(new java.awt.Color(237, 200, 119));
-        profile_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        profile_button.setForeground(new java.awt.Color(0, 0, 0));
-        profile_button.setText("Profile");
-        profile_button.setBorder(null);
-        profile_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        profile_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                profile_buttonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                profile_buttonMouseExited(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -434,8 +402,6 @@ public class User_Gallery extends javax.swing.JFrame {
             .addComponent(booking_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(news_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(contact_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(history_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(profile_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -451,10 +417,6 @@ public class User_Gallery extends javax.swing.JFrame {
                 .addComponent(news_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contact_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(history_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(profile_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logout_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -685,22 +647,6 @@ public class User_Gallery extends javax.swing.JFrame {
         contact_button.setForeground(Color.BLACK);
     }//GEN-LAST:event_contact_buttonMouseExited
 
-    private void history_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_buttonMouseEntered
-        history_button.setForeground(Color.WHITE);
-    }//GEN-LAST:event_history_buttonMouseEntered
-
-    private void history_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_buttonMouseExited
-        history_button.setForeground(Color.BLACK);
-    }//GEN-LAST:event_history_buttonMouseExited
-
-    private void profile_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profile_buttonMouseEntered
-        profile_button.setForeground(Color.WHITE);
-    }//GEN-LAST:event_profile_buttonMouseEntered
-
-    private void profile_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profile_buttonMouseExited
-        profile_button.setForeground(Color.BLACK);
-    }//GEN-LAST:event_profile_buttonMouseExited
-
     private void gallery_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallery_buttonActionPerformed
        User_Gallery ug = new User_Gallery();
        ug.show();
@@ -763,7 +709,6 @@ public class User_Gallery extends javax.swing.JFrame {
     private javax.swing.JButton contact_button;
     private javax.swing.JButton gallery_button;
     private javax.swing.JLabel gallery_header;
-    private javax.swing.JButton history_button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -788,7 +733,6 @@ public class User_Gallery extends javax.swing.JFrame {
     private javax.swing.JLabel label_6;
     private javax.swing.JButton logout_button;
     private javax.swing.JButton news_button;
-    private javax.swing.JButton profile_button;
     private javax.swing.JButton rooms_button;
     // End of variables declaration//GEN-END:variables
 }
