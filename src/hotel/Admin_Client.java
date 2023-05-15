@@ -349,6 +349,11 @@ public class Admin_Client extends javax.swing.JFrame {
                 messages_buttonMouseExited(evt);
             }
         });
+        messages_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                messages_buttonActionPerformed(evt);
+            }
+        });
 
         profile_button.setBackground(new java.awt.Color(237, 200, 119));
         profile_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -889,6 +894,12 @@ public class Admin_Client extends javax.swing.JFrame {
         ag.show();
         dispose();
     }//GEN-LAST:event_gallery_buttonActionPerformed
+
+    private void messages_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messages_buttonActionPerformed
+       Admin_Messages am = new Admin_Messages();
+       am.show();
+       dispose();
+    }//GEN-LAST:event_messages_buttonActionPerformed
 
     /**
      * @param args the command line arguments
