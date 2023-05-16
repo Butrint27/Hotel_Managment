@@ -310,6 +310,11 @@ public class User_Gallery extends javax.swing.JFrame {
                 rooms_buttonMouseExited(evt);
             }
         });
+        rooms_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rooms_buttonActionPerformed(evt);
+            }
+        });
 
         logout_button.setBackground(new java.awt.Color(237, 200, 119));
         logout_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -668,6 +673,12 @@ public class User_Gallery extends javax.swing.JFrame {
         uc.show();
         dispose();
     }//GEN-LAST:event_contact_buttonActionPerformed
+
+    private void rooms_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rooms_buttonActionPerformed
+        User_Rooms ur = new User_Rooms();
+        ur.show();
+        dispose();
+    }//GEN-LAST:event_rooms_buttonActionPerformed
 
     /**
      * @param args the command line arguments

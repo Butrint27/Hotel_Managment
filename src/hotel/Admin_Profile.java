@@ -65,7 +65,7 @@ public class Admin_Profile extends javax.swing.JFrame {
     }
     
     public void profileImage(){
-        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment\\src\\img\\hotel_prishtina_logo.png");
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\img\\hotel_prishtina_logo.png");
         Image img = icon.getImage();
         Image imgScale = img.getScaledInstance(profile_picture.getWidth(), profile_picture.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);

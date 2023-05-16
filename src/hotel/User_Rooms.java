@@ -7,114 +7,232 @@ package hotel;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Image;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Butrint Bajrami
  */
-public class User_News extends javax.swing.JFrame {
+public class User_Rooms extends javax.swing.JFrame {
 
     /**
-     * Creates new form User_News
+     * Creates new form User_Rooms
      */
-    public User_News() {
+    public User_Rooms() {
         FlatLightLaf.setup();
         initComponents();
-        setExtendedState(JFrame.MAXIMIZED_BOTH); 
-        scaleImage();
-        starImage();
-        starImage_1();
-        starImage_2();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         
-           try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
-            Statement stmt = con.createStatement();
-            String query = ("SELECT * FROM news ORDER BY id DESC LIMIT 1;");
-            ResultSet rs =  stmt.executeQuery(query);
-            
-            if(rs.next()){
-                
-                  title_label.setText(rs.getString("title"));
-                  subtitle_label.setText(rs.getString("subtitle"));
-            }
-               
+        scaleImage();
+        roomsHeader();
+        
+        room_1();
+        room_2();
+        room_3();
+        room_4();
+        room_5();
+        room_6();
+        
+        try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM room_1 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("roomFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_1.getWidth(), label_1.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_1.setIcon(newImage);
+             }
+             
+             
         }catch(Exception e){
-             JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+        
+         try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM room_4 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("roomFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_2.getWidth(), label_2.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_2.setIcon(newImage);
+             }
+             
+             
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+         
+          try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM room_2 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("roomFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_3.getWidth(), label_3.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_3.setIcon(newImage);
+             }
+             
+             
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+          
+          
+           try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM room_5 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("roomFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_4.getWidth(), label_4.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_4.setIcon(newImage);
+             }
+             
+             
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
         }
            
-             try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
-            Statement stmt = con.createStatement();
-            String query = ("SELECT * FROM news_2 ORDER BY id DESC LIMIT 1;");
-            ResultSet rs =  stmt.executeQuery(query);
-            
-            if(rs.next()){
-                
-                  title_label2.setText(rs.getString("title"));
-                  subtitle_label2.setText(rs.getString("subtitle"));
-            }
-               
-        }catch(Exception e){
-             JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
-        }
+            try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM room_3 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
              
-               try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
-            Statement stmt = con.createStatement();
-            String query = ("SELECT * FROM news_3 ORDER BY id DESC LIMIT 1;");
-            ResultSet rs =  stmt.executeQuery(query);
-            
-            if(rs.next()){
-                
-                  title_label3.setText(rs.getString("title"));
-                  subtitle_label3.setText(rs.getString("subtitle"));
-            }
-               
+             if(rs.next()){
+                 byte [] img = rs.getBytes("roomFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_5.getWidth(), label_5.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_5.setIcon(newImage);
+             }
+             
+             
         }catch(Exception e){
-             JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
         }
+            
+             try{
+             Class.forName("com.mysql.cj.jdbc.Driver");
+             Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+             Statement stmt = con.createStatement();
+             String query = ("SELECT * FROM room_6 ORDER BY id DESC LIMIT 1;");
+             ResultSet rs =  stmt.executeQuery(query);
+             
+             if(rs.next()){
+                 byte [] img = rs.getBytes("roomFile");
+                 ImageIcon image = new ImageIcon(img);
+                 Image im = image.getImage();
+                 Image myImg = im.getScaledInstance(label_6.getWidth(), label_6.getHeight(), Image.SCALE_SMOOTH);
+                 ImageIcon newImage = new ImageIcon(myImg);
+                 label_6.setIcon(newImage);
+             }
+             
+             
+        }catch(Exception e){
+           JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+           
+           
     }
     
-     public void scaleImage(){
+    
+    
+    public void scaleImage(){
         ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\img\\hotel_prishtina_logo.png");
         Image img = icon.getImage();
         Image imgScale = img.getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
         label.setIcon(scaledIcon);
     }
-     
-      public void starImage(){
-        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment\\src\\gallery_img\\mail.png");
+    
+    public void roomsHeader(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\img\\header_image_rooms_1.JPG");
         Image img = icon.getImage();
-        Image imgScale = img.getScaledInstance(star_label.getWidth(), star_label.getHeight(), Image.SCALE_SMOOTH);
+        Image imgScale = img.getScaledInstance(rooms_header.getWidth(), rooms_header.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
-        star_label.setIcon(scaledIcon);
+        rooms_header.setIcon(scaledIcon);
+    }
+    
+     public void room_1(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_1.getWidth(), label_1.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_1.setIcon(scaledIcon);
     }
       
-      public void starImage_1(){
-        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment\\src\\gallery_img\\mail.png");
+       public void room_2(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
         Image img = icon.getImage();
-        Image imgScale = img.getScaledInstance(star_label1.getWidth(), star_label1.getHeight(), Image.SCALE_SMOOTH);
+        Image imgScale = img.getScaledInstance(label_2.getWidth(), label_2.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
-        star_label1.setIcon(scaledIcon);
+        label_2.setIcon(scaledIcon);
     }
-      
-      public void starImage_2(){
-        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment\\src\\gallery_img\\mail.png");
+       
+       public void room_3(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
         Image img = icon.getImage();
-        Image imgScale = img.getScaledInstance(star_label2.getWidth(), star_label2.getHeight(), Image.SCALE_SMOOTH);
+        Image imgScale = img.getScaledInstance(label_3.getWidth(), label_3.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
-        star_label2.setIcon(scaledIcon);
+        label_3.setIcon(scaledIcon);
+    }
+       
+        public void room_4(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_4.getWidth(), label_4.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_4.setIcon(scaledIcon);
+    }
+       
+        public void room_5(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_5.getWidth(), label_5.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_5.setIcon(scaledIcon);
+    }
+        
+        public void room_6(){
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\icons8-picture-480.png");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(label_6.getWidth(), label_6.getHeight(), Image.SCALE_SMOOTH);
+        ImageIcon scaledIcon = new ImageIcon(imgScale);
+        label_6.setIcon(scaledIcon);
     }
 
     /**
@@ -135,10 +253,11 @@ public class User_News extends javax.swing.JFrame {
         booking_button = new javax.swing.JButton();
         news_button = new javax.swing.JButton();
         contact_button = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        star_label = new javax.swing.JLabel();
+        rooms_header = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -148,20 +267,18 @@ public class User_News extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        label_1 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        star_label2 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        star_label1 = new javax.swing.JLabel();
-        refresh_btn1 = new javax.swing.JButton();
-        refresh_btn2 = new javax.swing.JButton();
-        title_label = new javax.swing.JLabel();
-        subtitle_label = new javax.swing.JLabel();
-        title_label2 = new javax.swing.JLabel();
-        subtitle_label2 = new javax.swing.JLabel();
-        title_label3 = new javax.swing.JLabel();
-        subtitle_label3 = new javax.swing.JLabel();
+        label_5 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        label_3 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        label_6 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        label_2 = new javax.swing.JLabel();
+        label_4 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -243,6 +360,11 @@ public class User_News extends javax.swing.JFrame {
                 booking_buttonMouseExited(evt);
             }
         });
+        booking_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                booking_buttonActionPerformed(evt);
+            }
+        });
 
         news_button.setBackground(new java.awt.Color(237, 200, 119));
         news_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -314,72 +436,53 @@ public class User_News extends javax.swing.JFrame {
                 .addComponent(logout_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(184, 159, 128));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(star_label, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(star_label, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
-        );
-
         jPanel3.setBackground(new java.awt.Color(229, 229, 229));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("BOOK NOW");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footer_icon/call.png"))); // NOI18N
-        jLabel4.setText("+383 38 611611");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footer_icon/call.png"))); // NOI18N
+        jLabel2.setText("+383 38 611611");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footer_icon/email.png"))); // NOI18N
-        jLabel5.setText("info@hotel-prishtina.com");
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footer_icon/email.png"))); // NOI18N
+        jLabel3.setText("info@hotel-prishtina.com");
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footer_icon/facebook.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footer_icon/facebook.png"))); // NOI18N
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footer_icon/instagram.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/footer_icon/instagram.png"))); // NOI18N
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel6.setText("ABOUT US");
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Located in the center of Pristina, 200 m from the NEWBORN monument. Hotel");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel8.setText("ABOUT US");
+        jLabel8.setText("events such as business meetings, seminars, trainings, media events and");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Located in the center of Pristina, 200 m from the NEWBORN monument. Hotel");
+        jLabel9.setText("Prishtina offers 2 exclusive conference spaces, both are suitable for various");
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("events such as business meetings, seminars, trainings, media events and");
+        jLabel10.setText("cocktails. They’re all equipped to be made flexible to suit your capacity needs.");
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("Prishtina offers 2 exclusive conference spaces, both are suitable for various");
+        jLabel11.setText("So, bring along your colleagues and motivate them with our professionally");
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("cocktails. They’re all equipped to be made flexible to suit your capacity needs.");
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel13.setText("So, bring along your colleagues and motivate them with our professionally");
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel14.setText("planned meetings in the center of our city.");
+        jLabel12.setText("planned meetings in the center of our city.");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -389,21 +492,21 @@ public class User_News extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
+                        .addComponent(jLabel4)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel7)))
+                        .addComponent(jLabel5)))
                 .addGap(289, 289, 289)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel14)
+                    .addComponent(jLabel12)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6)
                     .addComponent(jLabel9)
                     .addComponent(jLabel8)
-                    .addComponent(jLabel11)
                     .addComponent(jLabel10)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel13))
+                    .addComponent(jLabel11))
                 .addContainerGap(173, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -412,126 +515,60 @@ public class User_News extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel8))
+                    .addComponent(jLabel6))
                 .addGap(33, 33, 33)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel9))
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(39, 39, 39)
-                                .addComponent(jLabel5)
+                                .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel6))
+                                .addComponent(jLabel4))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel7)))
+                                .addComponent(jLabel5)))
                         .addGap(24, 24, 24))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel12)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel14)
                         .addGap(0, 12, Short.MAX_VALUE))))
         );
 
-        jPanel5.setBackground(new java.awt.Color(184, 159, 128));
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(126, 102, 72));
+        jLabel13.setText("PREMIUM ROOM WITH SAUNA");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(star_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(star_label2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(126, 102, 72));
+        jLabel16.setText("SUPERIOR DOUBLE ROOM");
 
-        jPanel6.setBackground(new java.awt.Color(184, 159, 128));
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(126, 102, 72));
+        jLabel18.setText("PREMIUM ROOM WITH JACUZZI");
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(star_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(star_label1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
+        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(126, 102, 72));
+        jLabel19.setText("SUPEROIR DOUBLE ROOM WITH JACUZZI");
 
-        refresh_btn1.setBackground(new java.awt.Color(255, 255, 255));
-        refresh_btn1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        refresh_btn1.setForeground(new java.awt.Color(0, 0, 0));
-        refresh_btn1.setBorder(null);
-        refresh_btn1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        refresh_btn1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                refresh_btn1MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                refresh_btn1MouseExited(evt);
-            }
-        });
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(126, 102, 72));
+        jLabel21.setText("BUSINESS ROOM");
 
-        refresh_btn2.setBackground(new java.awt.Color(255, 255, 255));
-        refresh_btn2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        refresh_btn2.setForeground(new java.awt.Color(0, 0, 0));
-        refresh_btn2.setBorder(null);
-        refresh_btn2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        refresh_btn2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                refresh_btn2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                refresh_btn2MouseExited(evt);
-            }
-        });
-
-        title_label.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        title_label.setForeground(new java.awt.Color(0, 0, 0));
-        title_label.setText("jLabel2");
-
-        subtitle_label.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        subtitle_label.setForeground(new java.awt.Color(0, 0, 0));
-        subtitle_label.setText("jLabel3");
-
-        title_label2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        title_label2.setForeground(new java.awt.Color(0, 0, 0));
-        title_label2.setText("jLabel2");
-
-        subtitle_label2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        subtitle_label2.setForeground(new java.awt.Color(0, 0, 0));
-        subtitle_label2.setText("jLabel3");
-
-        title_label3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        title_label3.setForeground(new java.awt.Color(0, 0, 0));
-        title_label3.setText("jLabel2");
-
-        subtitle_label3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        subtitle_label3.setForeground(new java.awt.Color(0, 0, 0));
-        subtitle_label3.setText("jLabel3");
+        jLabel24.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel24.setForeground(new java.awt.Color(126, 102, 72));
+        jLabel24.setText("STANDARD ROOM");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -541,64 +578,59 @@ public class User_News extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rooms_header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(title_label)
-                                    .addComponent(subtitle_label)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(title_label2)
-                                    .addComponent(subtitle_label2)))
-                            .addComponent(refresh_btn1)
-                            .addComponent(refresh_btn2)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(title_label3)
-                                    .addComponent(subtitle_label3))))
-                        .addContainerGap(1016, Short.MAX_VALUE))))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(49, 49, 49))
+                                .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(label_1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label_2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18)
+                            .addComponent(label_4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel21))
+                        .addGap(150, 150, 150)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(label_5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                                .addComponent(label_6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel16)
+                            .addComponent(jLabel24))
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(title_label)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(subtitle_label))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(refresh_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(rooms_header, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_5, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_3, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel16)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(title_label2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(subtitle_label2))
-                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addComponent(refresh_btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(title_label3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(subtitle_label3)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -659,6 +691,10 @@ public class User_News extends javax.swing.JFrame {
         booking_button.setForeground(Color.BLACK);
     }//GEN-LAST:event_booking_buttonMouseExited
 
+    private void booking_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_buttonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_booking_buttonActionPerformed
+
     private void news_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_news_buttonMouseEntered
         news_button.setForeground(Color.WHITE);
     }//GEN-LAST:event_news_buttonMouseEntered
@@ -666,6 +702,12 @@ public class User_News extends javax.swing.JFrame {
     private void news_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_news_buttonMouseExited
         news_button.setForeground(Color.BLACK);
     }//GEN-LAST:event_news_buttonMouseExited
+
+    private void news_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_news_buttonActionPerformed
+        User_News un = new User_News();
+        un.show();
+        dispose();
+    }//GEN-LAST:event_news_buttonActionPerformed
 
     private void contact_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contact_buttonMouseEntered
         contact_button.setForeground(Color.WHITE);
@@ -675,32 +717,10 @@ public class User_News extends javax.swing.JFrame {
         contact_button.setForeground(Color.BLACK);
     }//GEN-LAST:event_contact_buttonMouseExited
 
-    private void news_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_news_buttonActionPerformed
-        User_News un = new User_News();
-        un.show();
-        dispose();       
-    }//GEN-LAST:event_news_buttonActionPerformed
-
-    private void refresh_btn1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refresh_btn1MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_refresh_btn1MouseEntered
-
-    private void refresh_btn1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refresh_btn1MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_refresh_btn1MouseExited
-
-    private void refresh_btn2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refresh_btn2MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_refresh_btn2MouseEntered
-
-    private void refresh_btn2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refresh_btn2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_refresh_btn2MouseExited
-
     private void contact_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contact_buttonActionPerformed
-       User_Contact uc = new User_Contact();
-       uc.show();
-       dispose();
+        User_Contact uc = new User_Contact();
+        uc.show();
+        dispose();
     }//GEN-LAST:event_contact_buttonActionPerformed
 
     private void rooms_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rooms_buttonActionPerformed
@@ -726,20 +746,20 @@ public class User_News extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(User_News.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User_Rooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(User_News.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User_Rooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(User_News.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User_Rooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(User_News.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User_Rooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new User_News().setVisible(true);
+                new User_Rooms().setVisible(true);
             }
         });
     }
@@ -753,33 +773,32 @@ public class User_News extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    public javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel label;
+    private javax.swing.JLabel label_1;
+    private javax.swing.JLabel label_2;
+    private javax.swing.JLabel label_3;
+    private javax.swing.JLabel label_4;
+    private javax.swing.JLabel label_5;
+    private javax.swing.JLabel label_6;
     private javax.swing.JButton logout_button;
     private javax.swing.JButton news_button;
-    private javax.swing.JButton refresh_btn1;
-    private javax.swing.JButton refresh_btn2;
     private javax.swing.JButton rooms_button;
-    private javax.swing.JLabel star_label;
-    private javax.swing.JLabel star_label1;
-    private javax.swing.JLabel star_label2;
-    private javax.swing.JLabel subtitle_label;
-    private javax.swing.JLabel subtitle_label2;
-    private javax.swing.JLabel subtitle_label3;
-    private javax.swing.JLabel title_label;
-    private javax.swing.JLabel title_label2;
-    private javax.swing.JLabel title_label3;
+    private javax.swing.JLabel rooms_header;
     // End of variables declaration//GEN-END:variables
 }
