@@ -7,8 +7,15 @@ package hotel;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Image;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -25,6 +32,9 @@ public class Admin_Messages extends javax.swing.JFrame {
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         
         scaleImage();
+        show_contact_table();
+        
+        
         
     }
     
@@ -35,6 +45,24 @@ public class Admin_Messages extends javax.swing.JFrame {
         ImageIcon scaledIcon = new ImageIcon(imgScale);
         label.setIcon(scaledIcon);
     }
+    
+     public void show_contact_table(){
+       String sql = "SELECT * FROM contact";
+       
+       try{
+           Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
+           PreparedStatement pst = con.prepareStatement(sql);
+           ResultSet rs = pst.executeQuery();
+           DefaultTableModel model = (DefaultTableModel)contact_table.getModel();
+            while(rs.next()){
+                model.addRow(new String [] {rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)});
+            }            
+       }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+       }
+   }
+     
+     
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,11 +89,11 @@ public class Admin_Messages extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        contact_table = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        email_field = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        textArea1 = new java.awt.TextArea();
+        message_field = new java.awt.TextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -331,28 +359,33 @@ public class Admin_Messages extends javax.swing.JFrame {
                 .addContainerGap(38, Short.MAX_VALUE))
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        contact_table.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        contact_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "ID", "Email", "Message", "Date"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        contact_table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                contact_tableMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(contact_table);
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("From:");
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        email_field.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
         jLabel3.setText("Message:");
+
+        message_field.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -369,11 +402,11 @@ public class Admin_Messages extends javax.swing.JFrame {
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(message_field, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(email_field, javax.swing.GroupLayout.PREFERRED_SIZE, 881, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 315, Short.MAX_VALUE))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -386,11 +419,11 @@ public class Admin_Messages extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(email_field, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textArea1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(message_field, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -543,6 +576,13 @@ public class Admin_Messages extends javax.swing.JFrame {
             
     }//GEN-LAST:event_messages_buttonActionPerformed
 
+    private void contact_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contact_tableMouseClicked
+        int i = contact_table.getSelectedRow();
+        TableModel model = contact_table.getModel();
+        email_field.setText(model.getValueAt(i, 1).toString());
+        message_field.setText(model.getValueAt(i,2).toString());        
+    }//GEN-LAST:event_contact_tableMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -580,6 +620,8 @@ public class Admin_Messages extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton client_button;
+    private javax.swing.JTable contact_table;
+    private javax.swing.JTextField email_field;
     private javax.swing.JButton gallery_button;
     private javax.swing.JButton history_button;
     private javax.swing.JLabel jLabel1;
@@ -589,16 +631,14 @@ public class Admin_Messages extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel label;
     private javax.swing.JButton logout_button;
+    private java.awt.TextArea message_field;
     private javax.swing.JButton messages_button;
     private javax.swing.JButton news_button;
     private javax.swing.JButton profile_button;
     private javax.swing.JButton restaurant_button;
     private javax.swing.JButton rooms_button;
     private javax.swing.JButton staff_button;
-    private java.awt.TextArea textArea1;
     // End of variables declaration//GEN-END:variables
 }
