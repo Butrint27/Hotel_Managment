@@ -3,25 +3,28 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package hotel;
+
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.Color;
 import java.awt.Image;
-import javax.swing.*;
-
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
 /**
  *
  * @author Butrint Bajrami
  */
-public class User_Area extends javax.swing.JFrame {
+public class User_Booking extends javax.swing.JFrame {
 
-    public User_Area() {
+    /**
+     * Creates new form User_Booking
+     */
+    public User_Booking() {
         FlatLightLaf.setup();
         initComponents();
-        setExtendedState(JFrame.MAXIMIZED_BOTH); 
-        scaleImage();
-        welcomeImage();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         
+        scaleImage();
     }
     
     public void scaleImage(){
@@ -31,16 +34,7 @@ public class User_Area extends javax.swing.JFrame {
         ImageIcon scaledIcon = new ImageIcon(imgScale);
         label.setIcon(scaledIcon);
     }
-    
-    public void welcomeImage(){
-        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\img\\hotel_prishtina_logo.png");
-        Image img = icon.getImage();
-        Image imgScale = img.getScaledInstance(welcome_label.getWidth(), welcome_label.getHeight(), Image.SCALE_SMOOTH);
-        ImageIcon scaledIcon = new ImageIcon(imgScale);
-        welcome_label.setIcon(scaledIcon);
-    }
-    
-      
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,7 +44,7 @@ public class User_Area extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         label = new javax.swing.JLabel();
         gallery_button = new javax.swing.JButton();
@@ -59,14 +53,10 @@ public class User_Area extends javax.swing.JFrame {
         booking_button = new javax.swing.JButton();
         news_button = new javax.swing.JButton();
         contact_button = new javax.swing.JButton();
-        welcome_label = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
-        setSize(new java.awt.Dimension(0, 0));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(237, 200, 119));
 
@@ -216,97 +206,44 @@ public class User_Area extends javax.swing.JFrame {
                 .addComponent(news_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(contact_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logout_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        welcome_label.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 170, Short.MAX_VALUE)
-                .addComponent(welcome_label, javax.swing.GroupLayout.PREFERRED_SIZE, 1086, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 1256, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(welcome_label, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void gallery_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gallery_buttonMouseExited
-        gallery_button.setForeground(Color.BLACK);
-    }//GEN-LAST:event_gallery_buttonMouseExited
 
     private void gallery_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gallery_buttonMouseEntered
         gallery_button.setForeground(Color.WHITE);
     }//GEN-LAST:event_gallery_buttonMouseEntered
 
-    private void rooms_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rooms_buttonMouseExited
-        rooms_button.setForeground(Color.BLACK);
-    }//GEN-LAST:event_rooms_buttonMouseExited
-
-    private void rooms_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rooms_buttonMouseEntered
-        rooms_button.setForeground(Color.WHITE);
-    }//GEN-LAST:event_rooms_buttonMouseEntered
-
-    private void booking_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_booking_buttonMouseExited
-         booking_button.setForeground(Color.BLACK);
-    }//GEN-LAST:event_booking_buttonMouseExited
-
-    private void booking_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_booking_buttonMouseEntered
-         booking_button.setForeground(Color.WHITE);
-    }//GEN-LAST:event_booking_buttonMouseEntered
-
-    private void news_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_news_buttonMouseExited
-         news_button.setForeground(Color.BLACK);
-    }//GEN-LAST:event_news_buttonMouseExited
-
-    private void news_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_news_buttonMouseEntered
-        news_button.setForeground(Color.WHITE);
-    }//GEN-LAST:event_news_buttonMouseEntered
-
-    private void contact_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contact_buttonMouseExited
-        contact_button.setForeground(Color.BLACK);
-    }//GEN-LAST:event_contact_buttonMouseExited
-
-    private void contact_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contact_buttonMouseEntered
-        contact_button.setForeground(Color.WHITE);
-    }//GEN-LAST:event_contact_buttonMouseEntered
-
-    private void logout_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout_buttonMouseExited
-         logout_button.setForeground(Color.BLACK);
-    }//GEN-LAST:event_logout_buttonMouseExited
-
-    private void logout_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout_buttonMouseEntered
-         logout_button.setForeground(Color.WHITE);
-    }//GEN-LAST:event_logout_buttonMouseEntered
-
-    private void logout_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_buttonActionPerformed
-        Login_Side ls = new Login_Side();
-        ls.show();
-        dispose();        
-    }//GEN-LAST:event_logout_buttonActionPerformed
+    private void gallery_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gallery_buttonMouseExited
+        gallery_button.setForeground(Color.BLACK);
+    }//GEN-LAST:event_gallery_buttonMouseExited
 
     private void gallery_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallery_buttonActionPerformed
         User_Gallery ug = new User_Gallery();
@@ -314,17 +251,13 @@ public class User_Area extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_gallery_buttonActionPerformed
 
-    private void news_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_news_buttonActionPerformed
-        User_News un = new User_News();
-        un.show();
-        dispose();
-    }//GEN-LAST:event_news_buttonActionPerformed
+    private void rooms_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rooms_buttonMouseEntered
+        rooms_button.setForeground(Color.WHITE);
+    }//GEN-LAST:event_rooms_buttonMouseEntered
 
-    private void contact_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contact_buttonActionPerformed
-        User_Contact uc = new User_Contact();
-        uc.show();
-        dispose();
-    }//GEN-LAST:event_contact_buttonActionPerformed
+    private void rooms_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rooms_buttonMouseExited
+        rooms_button.setForeground(Color.BLACK);
+    }//GEN-LAST:event_rooms_buttonMouseExited
 
     private void rooms_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rooms_buttonActionPerformed
         User_Rooms ur = new User_Rooms();
@@ -332,14 +265,62 @@ public class User_Area extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_rooms_buttonActionPerformed
 
+    private void logout_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout_buttonMouseEntered
+        logout_button.setForeground(Color.WHITE);
+    }//GEN-LAST:event_logout_buttonMouseEntered
+
+    private void logout_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logout_buttonMouseExited
+        logout_button.setForeground(Color.BLACK);
+    }//GEN-LAST:event_logout_buttonMouseExited
+
+    private void logout_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logout_buttonActionPerformed
+        Login_Side ls = new Login_Side();
+        ls.show();
+        dispose();
+    }//GEN-LAST:event_logout_buttonActionPerformed
+
+    private void booking_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_booking_buttonMouseEntered
+        booking_button.setForeground(Color.WHITE);
+    }//GEN-LAST:event_booking_buttonMouseEntered
+
+    private void booking_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_booking_buttonMouseExited
+        booking_button.setForeground(Color.BLACK);
+    }//GEN-LAST:event_booking_buttonMouseExited
+
     private void booking_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_buttonActionPerformed
        User_Booking ub = new User_Booking();
        ub.show();
        dispose();
     }//GEN-LAST:event_booking_buttonActionPerformed
 
-    
-    
+    private void news_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_news_buttonMouseEntered
+        news_button.setForeground(Color.WHITE);
+    }//GEN-LAST:event_news_buttonMouseEntered
+
+    private void news_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_news_buttonMouseExited
+        news_button.setForeground(Color.BLACK);
+    }//GEN-LAST:event_news_buttonMouseExited
+
+    private void news_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_news_buttonActionPerformed
+        User_News un = new User_News();
+        un.show();
+        dispose();
+    }//GEN-LAST:event_news_buttonActionPerformed
+
+    private void contact_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contact_buttonMouseEntered
+        contact_button.setForeground(Color.WHITE);
+    }//GEN-LAST:event_contact_buttonMouseEntered
+
+    private void contact_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contact_buttonMouseExited
+        contact_button.setForeground(Color.BLACK);
+    }//GEN-LAST:event_contact_buttonMouseExited
+
+    private void contact_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contact_buttonActionPerformed
+        User_Contact uc = new User_Contact();
+        uc.show();
+        dispose();
+    }//GEN-LAST:event_contact_buttonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -357,20 +338,20 @@ public class User_Area extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(User_Area.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User_Booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(User_Area.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User_Booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(User_Area.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User_Booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(User_Area.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(User_Booking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new User_Area().setVisible(true);
+                new User_Booking().setVisible(true);
             }
         });
     }
@@ -379,12 +360,11 @@ public class User_Area extends javax.swing.JFrame {
     private javax.swing.JButton booking_button;
     private javax.swing.JButton contact_button;
     private javax.swing.JButton gallery_button;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel label;
     private javax.swing.JButton logout_button;
     private javax.swing.JButton news_button;
     private javax.swing.JButton rooms_button;
-    private javax.swing.JLabel welcome_label;
     // End of variables declaration//GEN-END:variables
 }

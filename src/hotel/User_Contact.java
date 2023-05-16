@@ -166,6 +166,11 @@ public class User_Contact extends javax.swing.JFrame {
                 booking_buttonMouseExited(evt);
             }
         });
+        booking_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                booking_buttonActionPerformed(evt);
+            }
+        });
 
         news_button.setBackground(new java.awt.Color(237, 200, 119));
         news_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -534,6 +539,12 @@ public class User_Contact extends javax.swing.JFrame {
         ur.show();
         dispose();
     }//GEN-LAST:event_rooms_buttonActionPerformed
+
+    private void booking_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_buttonActionPerformed
+       User_Booking ub = new User_Booking();
+       ub.show();
+       dispose();
+    }//GEN-LAST:event_booking_buttonActionPerformed
 
     /**
      * @param args the command line arguments

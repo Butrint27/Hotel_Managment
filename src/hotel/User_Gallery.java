@@ -665,7 +665,9 @@ public class User_Gallery extends javax.swing.JFrame {
     }//GEN-LAST:event_news_buttonActionPerformed
 
     private void booking_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_booking_buttonActionPerformed
-        // TODO add your handling code here:
+       User_Booking ub = new User_Booking();
+       ub.show();
+       dispose();
     }//GEN-LAST:event_booking_buttonActionPerformed
 
     private void contact_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contact_buttonActionPerformed
