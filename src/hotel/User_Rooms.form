@@ -542,7 +542,13 @@
               <Color blue="48" green="66" red="7e" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="PREMIUM ROOM WITH SAUNA"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel13MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="label_5">
         </Component>
@@ -555,7 +561,13 @@
               <Color blue="48" green="66" red="7e" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SUPERIOR DOUBLE ROOM"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel16MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="label_3">
         </Component>
@@ -568,7 +580,13 @@
               <Color blue="48" green="66" red="7e" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="PREMIUM ROOM WITH JACUZZI"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel18MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel19">
           <Properties>
@@ -579,7 +597,13 @@
               <Color blue="48" green="66" red="7e" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="SUPEROIR DOUBLE ROOM WITH JACUZZI"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel19MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="label_6">
         </Component>
@@ -592,7 +616,13 @@
               <Color blue="48" green="66" red="7e" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="BUSINESS ROOM"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel21MouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="label_2">
         </Component>
@@ -607,7 +637,13 @@
               <Color blue="48" green="66" red="7e" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="STANDARD ROOM"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Hand Cursor"/>
+            </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel24MouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
