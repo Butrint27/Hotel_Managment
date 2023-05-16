@@ -238,6 +238,11 @@ public class Admin_Profile extends javax.swing.JFrame {
                 rooms_buttonMouseExited(evt);
             }
         });
+        rooms_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rooms_buttonActionPerformed(evt);
+            }
+        });
 
         restaurant_button.setBackground(new java.awt.Color(237, 200, 119));
         restaurant_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
@@ -755,6 +760,12 @@ public class Admin_Profile extends javax.swing.JFrame {
         am.show();
         dispose();
     }//GEN-LAST:event_messages_buttonActionPerformed
+
+    private void rooms_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rooms_buttonActionPerformed
+        Admin_Rooms ar = new Admin_Rooms();
+        ar.show();
+        dispose();
+    }//GEN-LAST:event_rooms_buttonActionPerformed
 
     /**
      * @param args the command line arguments

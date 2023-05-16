@@ -10,18 +10,22 @@ import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.filechooser.FileNameExtensionFilter;
-import java.sql.*;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
  * @author Butrint Bajrami
  */
-public class Admin_Gallery extends javax.swing.JFrame {
+public class Admin_Rooms extends javax.swing.JFrame {
+
      File f = null;
      String path = null;
      private ImageIcon format = null;
@@ -31,10 +35,10 @@ public class Admin_Gallery extends javax.swing.JFrame {
      Connection con;
      PreparedStatement pst;
      ResultSet rs;
-    
-    
-    
-    public Admin_Gallery() {
+     
+     
+     
+    public Admin_Rooms() {
         FlatLightLaf.setup();
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -50,10 +54,9 @@ public class Admin_Gallery extends javax.swing.JFrame {
         Connect();
         
         imagePath.setVisible(false);
-       
     }
     
-    public void Connect(){
+     public void Connect(){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel_managment","root","bajrami27");
@@ -62,8 +65,6 @@ public class Admin_Gallery extends javax.swing.JFrame {
         }
     }
     
-    
-
      public void scaleImage(){
         ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\img\\hotel_prishtina_logo.png");
         Image img = icon.getImage();
@@ -119,10 +120,7 @@ public class Admin_Gallery extends javax.swing.JFrame {
         ImageIcon scaledIcon = new ImageIcon(imgScale);
         label_6.setIcon(scaledIcon);
     }
-     
-     
-     
-     
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -147,25 +145,31 @@ public class Admin_Gallery extends javax.swing.JFrame {
         profile_button = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        label_3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
         label_1 = new javax.swing.JLabel();
-        label_2 = new javax.swing.JLabel();
         browse_1 = new javax.swing.JButton();
         save_1 = new javax.swing.JButton();
-        browse_2 = new javax.swing.JButton();
-        save_2 = new javax.swing.JButton();
-        browse_3 = new javax.swing.JButton();
-        save_3 = new javax.swing.JButton();
         label_4 = new javax.swing.JLabel();
-        label_5 = new javax.swing.JLabel();
-        label_6 = new javax.swing.JLabel();
         browse_4 = new javax.swing.JButton();
         save_4 = new javax.swing.JButton();
+        label_2 = new javax.swing.JLabel();
+        browse_2 = new javax.swing.JButton();
+        save_2 = new javax.swing.JButton();
+        label_5 = new javax.swing.JLabel();
         browse_5 = new javax.swing.JButton();
         save_5 = new javax.swing.JButton();
+        label_3 = new javax.swing.JLabel();
+        browse_3 = new javax.swing.JButton();
+        save_3 = new javax.swing.JButton();
+        label_6 = new javax.swing.JLabel();
         browse_6 = new javax.swing.JButton();
         save_6 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
         imagePath = new javax.swing.JTextField();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -411,7 +415,7 @@ public class Admin_Gallery extends javax.swing.JFrame {
                 .addComponent(messages_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(profile_button, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logout_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -420,13 +424,13 @@ public class Admin_Gallery extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("        Gallery");
+        jLabel1.setText("        Rooms");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -435,6 +439,10 @@ public class Admin_Gallery extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         browse_1.setBackground(new java.awt.Color(237, 200, 119));
         browse_1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -471,82 +479,6 @@ public class Admin_Gallery extends javax.swing.JFrame {
         save_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save_1ActionPerformed(evt);
-            }
-        });
-
-        browse_2.setBackground(new java.awt.Color(237, 200, 119));
-        browse_2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        browse_2.setForeground(new java.awt.Color(0, 0, 0));
-        browse_2.setText("Browse");
-        browse_2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        browse_2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                browse_2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                browse_2MouseExited(evt);
-            }
-        });
-        browse_2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                browse_2ActionPerformed(evt);
-            }
-        });
-
-        save_2.setBackground(new java.awt.Color(237, 200, 119));
-        save_2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        save_2.setForeground(new java.awt.Color(0, 0, 0));
-        save_2.setText("Save");
-        save_2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        save_2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                save_2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                save_2MouseExited(evt);
-            }
-        });
-        save_2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                save_2ActionPerformed(evt);
-            }
-        });
-
-        browse_3.setBackground(new java.awt.Color(237, 200, 119));
-        browse_3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        browse_3.setForeground(new java.awt.Color(0, 0, 0));
-        browse_3.setText("Browse");
-        browse_3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        browse_3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                browse_3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                browse_3MouseExited(evt);
-            }
-        });
-        browse_3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                browse_3ActionPerformed(evt);
-            }
-        });
-
-        save_3.setBackground(new java.awt.Color(237, 200, 119));
-        save_3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
-        save_3.setForeground(new java.awt.Color(0, 0, 0));
-        save_3.setText("Save");
-        save_3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        save_3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                save_3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                save_3MouseExited(evt);
-            }
-        });
-        save_3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                save_3ActionPerformed(evt);
             }
         });
 
@@ -588,6 +520,44 @@ public class Admin_Gallery extends javax.swing.JFrame {
             }
         });
 
+        browse_2.setBackground(new java.awt.Color(237, 200, 119));
+        browse_2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        browse_2.setForeground(new java.awt.Color(0, 0, 0));
+        browse_2.setText("Browse");
+        browse_2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        browse_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                browse_2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                browse_2MouseExited(evt);
+            }
+        });
+        browse_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                browse_2ActionPerformed(evt);
+            }
+        });
+
+        save_2.setBackground(new java.awt.Color(237, 200, 119));
+        save_2.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        save_2.setForeground(new java.awt.Color(0, 0, 0));
+        save_2.setText("Save");
+        save_2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        save_2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                save_2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                save_2MouseExited(evt);
+            }
+        });
+        save_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save_2ActionPerformed(evt);
+            }
+        });
+
         browse_5.setBackground(new java.awt.Color(237, 200, 119));
         browse_5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         browse_5.setForeground(new java.awt.Color(0, 0, 0));
@@ -623,6 +593,44 @@ public class Admin_Gallery extends javax.swing.JFrame {
         save_5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save_5ActionPerformed(evt);
+            }
+        });
+
+        browse_3.setBackground(new java.awt.Color(237, 200, 119));
+        browse_3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        browse_3.setForeground(new java.awt.Color(0, 0, 0));
+        browse_3.setText("Browse");
+        browse_3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        browse_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                browse_3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                browse_3MouseExited(evt);
+            }
+        });
+        browse_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                browse_3ActionPerformed(evt);
+            }
+        });
+
+        save_3.setBackground(new java.awt.Color(237, 200, 119));
+        save_3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        save_3.setForeground(new java.awt.Color(0, 0, 0));
+        save_3.setText("Save");
+        save_3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        save_3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                save_3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                save_3MouseExited(evt);
+            }
+        });
+        save_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                save_3ActionPerformed(evt);
             }
         });
 
@@ -664,96 +672,172 @@ public class Admin_Gallery extends javax.swing.JFrame {
             }
         });
 
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(540, Short.MAX_VALUE)
+                .addComponent(browse_5)
+                .addGap(18, 18, 18)
+                .addComponent(save_5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(536, 536, 536))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(2, 2, 2)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGap(80, 80, 80)
+                            .addComponent(browse_1)
+                            .addGap(18, 18, 18)
+                            .addComponent(save_1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
+                            .addComponent(browse_2)
+                            .addGap(18, 18, 18)
+                            .addComponent(save_2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(268, 268, 268)
+                            .addComponent(browse_3)
+                            .addGap(18, 18, 18)
+                            .addComponent(save_3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(94, 94, 94))
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(label_4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(label_1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(label_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(label_5, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
+                            .addGap(78, 78, 78)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(label_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(label_6, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE)))
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addGap(76, 76, 76)
+                            .addComponent(browse_4)
+                            .addGap(18, 18, 18)
+                            .addComponent(save_4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 727, Short.MAX_VALUE)
+                            .addComponent(browse_6)
+                            .addGap(18, 18, 18)
+                            .addComponent(save_6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(97, 97, 97)))
+                    .addGap(2, 2, 2)))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(629, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(save_5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(browse_5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37))
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(37, 37, 37)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(label_3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label_2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label_1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(browse_1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(save_1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(browse_2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(save_2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(browse_3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(save_3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(45, 45, 45)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(label_6, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                        .addComponent(label_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(label_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(browse_4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(save_4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(browse_6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(save_6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(38, Short.MAX_VALUE)))
+        );
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(imagePath)
+                .addGap(536, 536, 536))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(imagePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+
+        jPanel7.setBackground(new java.awt.Color(237, 200, 119));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("      Reservation");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(0, 696, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(jPanel4);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(browse_1)
-                        .addGap(18, 18, 18)
-                        .addComponent(save_1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 286, Short.MAX_VALUE)
-                        .addComponent(browse_2)
-                        .addGap(18, 18, 18)
-                        .addComponent(save_2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(268, 268, 268)
-                        .addComponent(browse_3)
-                        .addGap(18, 18, 18)
-                        .addComponent(save_3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(label_4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(label_1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(label_2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(label_5, javax.swing.GroupLayout.DEFAULT_SIZE, 370, Short.MAX_VALUE))
-                                .addGap(78, 78, 78)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(label_3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(label_6, javax.swing.GroupLayout.DEFAULT_SIZE, 350, Short.MAX_VALUE))
-                                .addContainerGap())))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(imagePath)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(browse_4)
-                                .addGap(18, 18, 18)
-                                .addComponent(save_4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(265, 265, 265)
-                                .addComponent(browse_5)
-                                .addGap(18, 18, 18)
-                                .addComponent(save_5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(browse_6)
-                        .addGap(18, 18, 18)
-                        .addComponent(save_6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(103, 103, 103))))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(59, 59, 59)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_3, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label_1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(browse_1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(save_1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(browse_2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(save_2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(browse_3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(save_3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(label_6, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(label_5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(label_4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(browse_4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(save_4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(browse_5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(save_5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(browse_6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(save_6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(imagePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -884,6 +968,12 @@ public class Admin_Gallery extends javax.swing.JFrame {
         messages_button.setForeground(Color.BLACK);
     }//GEN-LAST:event_messages_buttonMouseExited
 
+    private void messages_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messages_buttonActionPerformed
+        Admin_Messages am = new Admin_Messages();
+        am.show();
+        dispose();
+    }//GEN-LAST:event_messages_buttonActionPerformed
+
     private void profile_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profile_buttonMouseEntered
         profile_button.setForeground(Color.WHITE);
     }//GEN-LAST:event_profile_buttonMouseEntered
@@ -898,6 +988,12 @@ public class Admin_Gallery extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_profile_buttonActionPerformed
 
+    private void rooms_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rooms_buttonActionPerformed
+        Admin_Rooms ar = new Admin_Rooms();
+        ar.show();
+        dispose();
+    }//GEN-LAST:event_rooms_buttonActionPerformed
+
     private void browse_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_1MouseEntered
         browse_1.setForeground(Color.WHITE);
     }//GEN-LAST:event_browse_1MouseEntered
@@ -907,20 +1003,20 @@ public class Admin_Gallery extends javax.swing.JFrame {
     }//GEN-LAST:event_browse_1MouseExited
 
     private void browse_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_1ActionPerformed
-          JFileChooser fileChooser = new JFileChooser();
-          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
-          fileChooser.addChoosableFileFilter(fnwf);
-          int load = fileChooser.showOpenDialog(null);
-          
-          if(load==fileChooser.APPROVE_OPTION){
-             f = fileChooser.getSelectedFile();
-             path = f.getAbsolutePath();
-             imagePath.setText(path);
-             ImageIcon ii = new ImageIcon(path);
-             Image img = ii.getImage().getScaledInstance(label_1.getWidth(),label_1.getHeight(), Image.SCALE_SMOOTH);
-             label_1.setIcon(new ImageIcon(img));
-             
-          }
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+        fileChooser.addChoosableFileFilter(fnwf);
+        int load = fileChooser.showOpenDialog(null);
+
+        if(load==fileChooser.APPROVE_OPTION){
+            f = fileChooser.getSelectedFile();
+            path = f.getAbsolutePath();
+            imagePath.setText(path);
+            ImageIcon ii = new ImageIcon(path);
+            Image img = ii.getImage().getScaledInstance(label_1.getWidth(),label_1.getHeight(), Image.SCALE_SMOOTH);
+            label_1.setIcon(new ImageIcon(img));
+
+        }
     }//GEN-LAST:event_browse_1ActionPerformed
 
     private void save_1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_1MouseEntered
@@ -935,26 +1031,83 @@ public class Admin_Gallery extends javax.swing.JFrame {
         System.out.println("Image Path - " + path);
         System.out.println("Image Name - " + f.getName());
         File f = new File(path);
-        
+
         try{
-             InputStream is = new FileInputStream(f);
-             
-             pst = con.prepareStatement("INSERT INTO gallery_1(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
-             pst.setString(1, f.getName());
-             pst.setString(2, path);
-             pst.setBlob(3, is);
-             
-             int inserted = pst.executeUpdate();
-             
-             if(inserted > 0){
-                 JOptionPane.showMessageDialog(null,"Image inserted successful");
-             }
-               
+            InputStream is = new FileInputStream(f);
+
+            pst = con.prepareStatement("INSERT INTO room_1(roomName,roomPath,roomFile) VALUES (?,?,?)");
+            pst.setString(1, f.getName());
+            pst.setString(2, path);
+            pst.setBlob(3, is);
+
+            int inserted = pst.executeUpdate();
+
+            if(inserted > 0){
+                JOptionPane.showMessageDialog(null,"Image inserted successful");
+            }
+
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
         }
-        
+
     }//GEN-LAST:event_save_1ActionPerformed
+
+    private void browse_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_4MouseEntered
+        browse_4.setForeground(Color.WHITE);
+    }//GEN-LAST:event_browse_4MouseEntered
+
+    private void browse_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_4MouseExited
+        browse_4.setForeground(Color.BLACK);
+    }//GEN-LAST:event_browse_4MouseExited
+
+    private void browse_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_4ActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+        fileChooser.addChoosableFileFilter(fnwf);
+        int load = fileChooser.showOpenDialog(null);
+
+        if(load==fileChooser.APPROVE_OPTION){
+            f = fileChooser.getSelectedFile();
+            path = f.getAbsolutePath();
+            imagePath.setText(path);
+            ImageIcon ii = new ImageIcon(path);
+            Image img = ii.getImage().getScaledInstance(label_4.getWidth(),label_4.getHeight(), Image.SCALE_SMOOTH);
+            label_4.setIcon(new ImageIcon(img));
+
+        }
+    }//GEN-LAST:event_browse_4ActionPerformed
+
+    private void save_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_4MouseEntered
+        save_4.setForeground(Color.WHITE);
+    }//GEN-LAST:event_save_4MouseEntered
+
+    private void save_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_4MouseExited
+        save_4.setForeground(Color.BLACK);
+    }//GEN-LAST:event_save_4MouseExited
+
+    private void save_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_4ActionPerformed
+        System.out.println("Image Path - " + path);
+        System.out.println("Image Name - " + f.getName());
+        File f = new File(path);
+
+        try{
+            InputStream is = new FileInputStream(f);
+
+            pst = con.prepareStatement("INSERT INTO room_4(roomName,roomPath,roomFile) VALUES (?,?,?)");
+            pst.setString(1, f.getName());
+            pst.setString(2, path);
+            pst.setBlob(3, is);
+
+            int inserted = pst.executeUpdate();
+
+            if(inserted > 0){
+                JOptionPane.showMessageDialog(null,"Image inserted successful");
+            }
+
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_save_4ActionPerformed
 
     private void browse_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_2MouseEntered
         browse_2.setForeground(Color.WHITE);
@@ -965,20 +1118,20 @@ public class Admin_Gallery extends javax.swing.JFrame {
     }//GEN-LAST:event_browse_2MouseExited
 
     private void browse_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_2ActionPerformed
-       JFileChooser fileChooser = new JFileChooser();
-          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
-          fileChooser.addChoosableFileFilter(fnwf);
-          int load = fileChooser.showOpenDialog(null);
-          
-          if(load==fileChooser.APPROVE_OPTION){
-             f = fileChooser.getSelectedFile();
-             path = f.getAbsolutePath();
-             imagePath.setText(path);
-             ImageIcon ii = new ImageIcon(path);
-             Image img = ii.getImage().getScaledInstance(label_2.getWidth(),label_2.getHeight(), Image.SCALE_SMOOTH);
-             label_2.setIcon(new ImageIcon(img));
-             
-          }
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+        fileChooser.addChoosableFileFilter(fnwf);
+        int load = fileChooser.showOpenDialog(null);
+
+        if(load==fileChooser.APPROVE_OPTION){
+            f = fileChooser.getSelectedFile();
+            path = f.getAbsolutePath();
+            imagePath.setText(path);
+            ImageIcon ii = new ImageIcon(path);
+            Image img = ii.getImage().getScaledInstance(label_2.getWidth(),label_2.getHeight(), Image.SCALE_SMOOTH);
+            label_2.setIcon(new ImageIcon(img));
+
+        }
     }//GEN-LAST:event_browse_2ActionPerformed
 
     private void save_2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_2MouseEntered
@@ -993,139 +1146,25 @@ public class Admin_Gallery extends javax.swing.JFrame {
         System.out.println("Image Path - " + path);
         System.out.println("Image Name - " + f.getName());
         File f = new File(path);
-        
+
         try{
-             InputStream is = new FileInputStream(f);
-             
-             pst = con.prepareStatement("INSERT INTO gallery_2(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
-             pst.setString(1, f.getName());
-             pst.setString(2, path);
-             pst.setBlob(3, is);
-             
-             int inserted = pst.executeUpdate();
-             
-             if(inserted > 0){
-                 JOptionPane.showMessageDialog(null,"Image inserted successful");
-             }
-               
+            InputStream is = new FileInputStream(f);
+
+            pst = con.prepareStatement("INSERT INTO room_2(roomName,roomPath,roomFile) VALUES (?,?,?)");
+            pst.setString(1, f.getName());
+            pst.setString(2, path);
+            pst.setBlob(3, is);
+
+            int inserted = pst.executeUpdate();
+
+            if(inserted > 0){
+                JOptionPane.showMessageDialog(null,"Image inserted successful");
+            }
+
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_save_2ActionPerformed
-
-    private void browse_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_3MouseEntered
-        browse_3.setForeground(Color.WHITE);
-    }//GEN-LAST:event_browse_3MouseEntered
-
-    private void browse_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_3MouseExited
-        browse_3.setForeground(Color.BLACK);
-    }//GEN-LAST:event_browse_3MouseExited
-
-    private void browse_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_3ActionPerformed
-          JFileChooser fileChooser = new JFileChooser();
-          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
-          fileChooser.addChoosableFileFilter(fnwf);
-          int load = fileChooser.showOpenDialog(null);
-          
-          if(load==fileChooser.APPROVE_OPTION){
-             f = fileChooser.getSelectedFile();
-             path = f.getAbsolutePath();
-             imagePath.setText(path);
-             ImageIcon ii = new ImageIcon(path);
-             Image img = ii.getImage().getScaledInstance(label_3.getWidth(),label_3.getHeight(), Image.SCALE_SMOOTH);
-             label_3.setIcon(new ImageIcon(img));
-             
-          }
-    }//GEN-LAST:event_browse_3ActionPerformed
-
-    private void save_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_3MouseEntered
-         save_3.setForeground(Color.WHITE);
-    }//GEN-LAST:event_save_3MouseEntered
-
-    private void save_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_3MouseExited
-        save_3.setForeground(Color.BLACK);
-    }//GEN-LAST:event_save_3MouseExited
-
-    private void save_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_3ActionPerformed
-       System.out.println("Image Path - " + path);
-        System.out.println("Image Name - " + f.getName());
-        File f = new File(path);
-        
-        try{
-             InputStream is = new FileInputStream(f);
-             
-             pst = con.prepareStatement("INSERT INTO gallery_3(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
-             pst.setString(1, f.getName());
-             pst.setString(2, path);
-             pst.setBlob(3, is);
-             
-             int inserted = pst.executeUpdate();
-             
-             if(inserted > 0){
-                 JOptionPane.showMessageDialog(null,"Image inserted successful");
-             }
-               
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_save_3ActionPerformed
-
-    private void browse_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_4MouseEntered
-        browse_4.setForeground(Color.WHITE);
-    }//GEN-LAST:event_browse_4MouseEntered
-
-    private void browse_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_4MouseExited
-        browse_4.setForeground(Color.BLACK);
-    }//GEN-LAST:event_browse_4MouseExited
-
-    private void browse_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_4ActionPerformed
-          JFileChooser fileChooser = new JFileChooser();
-          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
-          fileChooser.addChoosableFileFilter(fnwf);
-          int load = fileChooser.showOpenDialog(null);
-          
-          if(load==fileChooser.APPROVE_OPTION){
-             f = fileChooser.getSelectedFile();
-             path = f.getAbsolutePath();
-             imagePath.setText(path);
-             ImageIcon ii = new ImageIcon(path);
-             Image img = ii.getImage().getScaledInstance(label_4.getWidth(),label_4.getHeight(), Image.SCALE_SMOOTH);
-             label_4.setIcon(new ImageIcon(img));
-             
-          }
-    }//GEN-LAST:event_browse_4ActionPerformed
-
-    private void save_4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_4MouseEntered
-        save_4.setForeground(Color.WHITE);
-    }//GEN-LAST:event_save_4MouseEntered
-
-    private void save_4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_4MouseExited
-       save_4.setForeground(Color.BLACK);
-    }//GEN-LAST:event_save_4MouseExited
-
-    private void save_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_4ActionPerformed
-        System.out.println("Image Path - " + path);
-        System.out.println("Image Name - " + f.getName());
-        File f = new File(path);
-        
-        try{
-             InputStream is = new FileInputStream(f);
-             
-             pst = con.prepareStatement("INSERT INTO gallery_4(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
-             pst.setString(1, f.getName());
-             pst.setString(2, path);
-             pst.setBlob(3, is);
-             
-             int inserted = pst.executeUpdate();
-             
-             if(inserted > 0){
-                 JOptionPane.showMessageDialog(null,"Image inserted successful");
-             }
-               
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_save_4ActionPerformed
 
     private void browse_5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_5MouseEntered
         browse_5.setForeground(Color.WHITE);
@@ -1136,20 +1175,20 @@ public class Admin_Gallery extends javax.swing.JFrame {
     }//GEN-LAST:event_browse_5MouseExited
 
     private void browse_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_5ActionPerformed
-          JFileChooser fileChooser = new JFileChooser();
-          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
-          fileChooser.addChoosableFileFilter(fnwf);
-          int load = fileChooser.showOpenDialog(null);
-          
-          if(load==fileChooser.APPROVE_OPTION){
-             f = fileChooser.getSelectedFile();
-             path = f.getAbsolutePath();
-             imagePath.setText(path);
-             ImageIcon ii = new ImageIcon(path);
-             Image img = ii.getImage().getScaledInstance(label_5.getWidth(),label_5.getHeight(), Image.SCALE_SMOOTH);
-             label_5.setIcon(new ImageIcon(img));
-             
-          }
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+        fileChooser.addChoosableFileFilter(fnwf);
+        int load = fileChooser.showOpenDialog(null);
+
+        if(load==fileChooser.APPROVE_OPTION){
+            f = fileChooser.getSelectedFile();
+            path = f.getAbsolutePath();
+            imagePath.setText(path);
+            ImageIcon ii = new ImageIcon(path);
+            Image img = ii.getImage().getScaledInstance(label_5.getWidth(),label_5.getHeight(), Image.SCALE_SMOOTH);
+            label_5.setIcon(new ImageIcon(img));
+
+        }
     }//GEN-LAST:event_browse_5ActionPerformed
 
     private void save_5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_5MouseEntered
@@ -1164,25 +1203,82 @@ public class Admin_Gallery extends javax.swing.JFrame {
         System.out.println("Image Path - " + path);
         System.out.println("Image Name - " + f.getName());
         File f = new File(path);
-        
+
         try{
-             InputStream is = new FileInputStream(f);
-             
-             pst = con.prepareStatement("INSERT INTO gallery_5(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
-             pst.setString(1, f.getName());
-             pst.setString(2, path);
-             pst.setBlob(3, is);
-             
-             int inserted = pst.executeUpdate();
-             
-             if(inserted > 0){
-                 JOptionPane.showMessageDialog(null,"Image inserted successful");
-             }
-               
+            InputStream is = new FileInputStream(f);
+
+            pst = con.prepareStatement("INSERT INTO room_5(roomName,roomPath,roomFile) VALUES (?,?,?)");
+            pst.setString(1, f.getName());
+            pst.setString(2, path);
+            pst.setBlob(3, is);
+
+            int inserted = pst.executeUpdate();
+
+            if(inserted > 0){
+                JOptionPane.showMessageDialog(null,"Image inserted successful");
+            }
+
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_save_5ActionPerformed
+
+    private void browse_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_3MouseEntered
+        browse_3.setForeground(Color.WHITE);
+    }//GEN-LAST:event_browse_3MouseEntered
+
+    private void browse_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_3MouseExited
+        browse_3.setForeground(Color.BLACK);
+    }//GEN-LAST:event_browse_3MouseExited
+
+    private void browse_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_3ActionPerformed
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+        fileChooser.addChoosableFileFilter(fnwf);
+        int load = fileChooser.showOpenDialog(null);
+
+        if(load==fileChooser.APPROVE_OPTION){
+            f = fileChooser.getSelectedFile();
+            path = f.getAbsolutePath();
+            imagePath.setText(path);
+            ImageIcon ii = new ImageIcon(path);
+            Image img = ii.getImage().getScaledInstance(label_3.getWidth(),label_3.getHeight(), Image.SCALE_SMOOTH);
+            label_3.setIcon(new ImageIcon(img));
+
+        }
+    }//GEN-LAST:event_browse_3ActionPerformed
+
+    private void save_3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_3MouseEntered
+        save_3.setForeground(Color.WHITE);
+    }//GEN-LAST:event_save_3MouseEntered
+
+    private void save_3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_3MouseExited
+        save_3.setForeground(Color.BLACK);
+    }//GEN-LAST:event_save_3MouseExited
+
+    private void save_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save_3ActionPerformed
+        System.out.println("Image Path - " + path);
+        System.out.println("Image Name - " + f.getName());
+        File f = new File(path);
+
+        try{
+            InputStream is = new FileInputStream(f);
+
+            pst = con.prepareStatement("INSERT INTO room_3(roomName,roomPath,roomFile) VALUES (?,?,?)");
+            pst.setString(1, f.getName());
+            pst.setString(2, path);
+            pst.setBlob(3, is);
+
+            int inserted = pst.executeUpdate();
+
+            if(inserted > 0){
+                JOptionPane.showMessageDialog(null,"Image inserted successful");
+            }
+
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_save_3ActionPerformed
 
     private void browse_6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_browse_6MouseEntered
         browse_6.setForeground(Color.WHITE);
@@ -1193,24 +1289,24 @@ public class Admin_Gallery extends javax.swing.JFrame {
     }//GEN-LAST:event_browse_6MouseExited
 
     private void browse_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_browse_6ActionPerformed
-       JFileChooser fileChooser = new JFileChooser();
-          FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
-          fileChooser.addChoosableFileFilter(fnwf);
-          int load = fileChooser.showOpenDialog(null);
-          
-          if(load==fileChooser.APPROVE_OPTION){
-             f = fileChooser.getSelectedFile();
-             path = f.getAbsolutePath();
-             imagePath.setText(path);
-             ImageIcon ii = new ImageIcon(path);
-             Image img = ii.getImage().getScaledInstance(label_6.getWidth(),label_6.getHeight(), Image.SCALE_SMOOTH);
-             label_6.setIcon(new ImageIcon(img));
-             
-          }
+        JFileChooser fileChooser = new JFileChooser();
+        FileNameExtensionFilter fnwf = new FileNameExtensionFilter("PNG JPG AND JPEG","png","jpeg","jpg");
+        fileChooser.addChoosableFileFilter(fnwf);
+        int load = fileChooser.showOpenDialog(null);
+
+        if(load==fileChooser.APPROVE_OPTION){
+            f = fileChooser.getSelectedFile();
+            path = f.getAbsolutePath();
+            imagePath.setText(path);
+            ImageIcon ii = new ImageIcon(path);
+            Image img = ii.getImage().getScaledInstance(label_6.getWidth(),label_6.getHeight(), Image.SCALE_SMOOTH);
+            label_6.setIcon(new ImageIcon(img));
+
+        }
     }//GEN-LAST:event_browse_6ActionPerformed
 
     private void save_6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_6MouseEntered
-         save_6.setForeground(Color.WHITE);
+        save_6.setForeground(Color.WHITE);
     }//GEN-LAST:event_save_6MouseEntered
 
     private void save_6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_6MouseExited
@@ -1221,37 +1317,25 @@ public class Admin_Gallery extends javax.swing.JFrame {
         System.out.println("Image Path - " + path);
         System.out.println("Image Name - " + f.getName());
         File f = new File(path);
-        
+
         try{
-             InputStream is = new FileInputStream(f);
-             
-             pst = con.prepareStatement("INSERT INTO gallery_6(galleryName,galleryPath,galleryFile) VALUES (?,?,?)");
-             pst.setString(1, f.getName());
-             pst.setString(2, path);
-             pst.setBlob(3, is);
-             
-             int inserted = pst.executeUpdate();
-             
-             if(inserted > 0){
-                 JOptionPane.showMessageDialog(null,"Image inserted successful");
-             }
-               
+            InputStream is = new FileInputStream(f);
+
+            pst = con.prepareStatement("INSERT INTO room_6(roomName,roomPath,roomFile) VALUES (?,?,?)");
+            pst.setString(1, f.getName());
+            pst.setString(2, path);
+            pst.setBlob(3, is);
+
+            int inserted = pst.executeUpdate();
+
+            if(inserted > 0){
+                JOptionPane.showMessageDialog(null,"Image inserted successful");
+            }
+
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Somethink went wrong with connection","title",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_save_6ActionPerformed
-
-    private void messages_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_messages_buttonActionPerformed
-        Admin_Messages am = new Admin_Messages();
-        am.show();
-        dispose();
-    }//GEN-LAST:event_messages_buttonActionPerformed
-
-    private void rooms_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rooms_buttonActionPerformed
-        Admin_Rooms ar = new Admin_Rooms();
-        ar.show();
-        dispose();
-    }//GEN-LAST:event_rooms_buttonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1270,20 +1354,20 @@ public class Admin_Gallery extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Admin_Gallery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_Rooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Admin_Gallery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_Rooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Admin_Gallery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_Rooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Admin_Gallery.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Admin_Rooms.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Admin_Gallery().setVisible(true);
+                new Admin_Rooms().setVisible(true);
             }
         });
     }
@@ -1300,9 +1384,15 @@ public class Admin_Gallery extends javax.swing.JFrame {
     private javax.swing.JButton history_button;
     private javax.swing.JTextField imagePath;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label;
     private javax.swing.JLabel label_1;
     private javax.swing.JLabel label_2;
