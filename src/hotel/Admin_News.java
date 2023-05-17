@@ -109,7 +109,6 @@ public class Admin_News extends javax.swing.JFrame {
         news_button = new javax.swing.JButton();
         rooms_button = new javax.swing.JButton();
         restaurant_button = new javax.swing.JButton();
-        history_button = new javax.swing.JButton();
         messages_button = new javax.swing.JButton();
         profile_button = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -276,26 +275,6 @@ public class Admin_News extends javax.swing.JFrame {
             }
         });
 
-        history_button.setBackground(new java.awt.Color(237, 200, 119));
-        history_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        history_button.setForeground(new java.awt.Color(0, 0, 0));
-        history_button.setText("History");
-        history_button.setBorder(null);
-        history_button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        history_button.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                history_buttonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                history_buttonMouseExited(evt);
-            }
-        });
-        history_button.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                history_buttonActionPerformed(evt);
-            }
-        });
-
         messages_button.setBackground(new java.awt.Color(237, 200, 119));
         messages_button.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         messages_button.setForeground(new java.awt.Color(0, 0, 0));
@@ -348,9 +327,8 @@ public class Admin_News extends javax.swing.JFrame {
             .addComponent(gallery_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(staff_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(news_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(history_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(messages_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(profile_button, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(profile_button, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -369,12 +347,10 @@ public class Admin_News extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(news_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(history_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(messages_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(profile_button, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(logout_button, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -621,7 +597,7 @@ public class Admin_News extends javax.swing.JFrame {
                     .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(transfer1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(title_field2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -720,14 +696,6 @@ public class Admin_News extends javax.swing.JFrame {
     private void restaurant_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_restaurant_buttonMouseExited
         restaurant_button.setForeground(Color.BLACK);
     }//GEN-LAST:event_restaurant_buttonMouseExited
-
-    private void history_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_buttonMouseEntered
-        history_button.setForeground(Color.WHITE);
-    }//GEN-LAST:event_history_buttonMouseEntered
-
-    private void history_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_history_buttonMouseExited
-        history_button.setForeground(Color.BLACK);
-    }//GEN-LAST:event_history_buttonMouseExited
 
     private void messages_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_messages_buttonMouseEntered
         messages_button.setForeground(Color.WHITE);
@@ -920,16 +888,8 @@ public class Admin_News extends javax.swing.JFrame {
     }//GEN-LAST:event_transfer2ActionPerformed
 
     private void news_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_news_buttonActionPerformed
-       Admin_History ah = new Admin_History();
-        ah.show();
-        dispose();
+      
     }//GEN-LAST:event_news_buttonActionPerformed
-
-    private void history_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_history_buttonActionPerformed
-        Admin_History ah = new Admin_History();
-        ah.show();
-        dispose();
-    }//GEN-LAST:event_history_buttonActionPerformed
 
     private void gallery_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gallery_buttonActionPerformed
         Admin_Gallery ag = new Admin_Gallery();
@@ -987,7 +947,6 @@ public class Admin_News extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton client_button;
     private javax.swing.JButton gallery_button;
-    private javax.swing.JButton history_button;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

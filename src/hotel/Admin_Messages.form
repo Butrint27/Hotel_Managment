@@ -108,7 +108,6 @@
                   <Component id="gallery_button" alignment="0" max="32767" attributes="0"/>
                   <Component id="staff_button" alignment="0" max="32767" attributes="0"/>
                   <Component id="news_button" alignment="0" max="32767" attributes="0"/>
-                  <Component id="history_button" alignment="0" max="32767" attributes="0"/>
                   <Component id="messages_button" alignment="0" max="32767" attributes="0"/>
                   <Component id="profile_button" alignment="0" max="32767" attributes="0"/>
               </Group>
@@ -130,12 +129,10 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="news_button" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="history_button" min="-2" pref="40" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                       <Component id="messages_button" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="profile_button" min="-2" pref="39" max="-2" attributes="0"/>
-                      <EmptySpace pref="119" max="32767" attributes="0"/>
+                      <EmptySpace pref="165" max="32767" attributes="0"/>
                       <Component id="logout_button" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -317,31 +314,6 @@
                 <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="restaurant_buttonMouseEntered"/>
                 <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="restaurant_buttonMouseExited"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="restaurant_buttonActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JButton" name="history_button">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="77" green="c8" red="ed" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="20" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="History"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
-                </Property>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="history_buttonMouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="history_buttonMouseExited"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="history_buttonActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="messages_button">
