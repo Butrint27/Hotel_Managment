@@ -94,7 +94,7 @@ public class User_News extends javax.swing.JFrame {
     }
      
       public void starImage(){
-        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment\\src\\gallery_img\\mail.png");
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\mail.png");
         Image img = icon.getImage();
         Image imgScale = img.getScaledInstance(star_label.getWidth(), star_label.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
@@ -102,7 +102,7 @@ public class User_News extends javax.swing.JFrame {
     }
       
       public void starImage_1(){
-        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment\\src\\gallery_img\\mail.png");
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\mail.png");
         Image img = icon.getImage();
         Image imgScale = img.getScaledInstance(star_label1.getWidth(), star_label1.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
@@ -110,7 +110,7 @@ public class User_News extends javax.swing.JFrame {
     }
       
       public void starImage_2(){
-        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment\\src\\gallery_img\\mail.png");
+        ImageIcon icon = new ImageIcon("C:\\Users\\Butrint Bajrami\\Documents\\NetBeansProjects\\Hotel_Managment_1\\src\\gallery_img\\mail.png");
         Image img = icon.getImage();
         Image imgScale = img.getScaledInstance(star_label2.getWidth(), star_label2.getHeight(), Image.SCALE_SMOOTH);
         ImageIcon scaledIcon = new ImageIcon(imgScale);
