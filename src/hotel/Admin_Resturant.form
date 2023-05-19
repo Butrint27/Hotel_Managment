@@ -48,7 +48,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanel3" max="32767" attributes="0"/>
-                      <Component id="jScrollPane2" pref="1250" max="32767" attributes="0"/>
+                      <Component id="jScrollPane2" pref="800" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -92,23 +92,23 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="label" min="-2" pref="330" max="-2" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="client_button" pref="40" max="32767" attributes="0"/>
+                      <Component id="client_button" pref="41" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="rooms_button" pref="40" max="32767" attributes="0"/>
+                      <Component id="rooms_button" pref="41" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="restaurant_button" pref="40" max="32767" attributes="0"/>
+                      <Component id="restaurant_button" pref="41" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="staff_button" pref="41" max="32767" attributes="0"/>
+                      <Component id="staff_button" pref="39" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="gallery_button" pref="41" max="32767" attributes="0"/>
+                      <Component id="gallery_button" pref="39" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="news_button" pref="40" max="32767" attributes="0"/>
+                      <Component id="news_button" pref="41" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="messages_button" pref="40" max="32767" attributes="0"/>
+                      <Component id="messages_button" pref="41" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="profile_button" pref="39" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="216" max="-2" attributes="0"/>
-                      <Component id="logout_button" pref="40" max="32767" attributes="0"/>
+                      <Component id="profile_button" pref="40" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
+                      <Component id="logout_button" pref="41" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -449,30 +449,32 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace pref="53" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="update_food_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="add_food_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="delete_food_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="update_food_button" alignment="1" pref="180" max="32767" attributes="0"/>
+                                          <Component id="add_food_button" alignment="1" pref="180" max="32767" attributes="0"/>
+                                          <Component id="delete_food_button" alignment="1" pref="180" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                      <Component id="id_food_field" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="id_food_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace min="61" pref="61" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="food_food_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="weight_food_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="price_food_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="date_food_field" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="food_food_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="weight_food_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="price_food_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="date_food_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="376" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="jScrollPane1" min="-2" pref="1000" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" pref="1030" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                           </Group>
@@ -484,29 +486,30 @@
                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane1" min="-2" pref="315" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane1" pref="315" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                                      <Component id="add_food_button" min="-2" pref="40" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="update_food_button" min="-2" pref="40" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="delete_food_button" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="add_food_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="update_food_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="delete_food_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="food_food_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="food_food_field" alignment="0" pref="35" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="price_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="date_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="id_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="weight_food_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="price_food_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="date_food_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="id_food_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="weight_food_field" alignment="3" pref="35" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace min="0" pref="84" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -696,30 +699,31 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace pref="51" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="update_object_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="add_object_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="delete_object_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="update_object_button" alignment="1" pref="150" max="32767" attributes="0"/>
+                                          <Component id="add_object_button" alignment="1" pref="150" max="32767" attributes="0"/>
+                                          <Component id="delete_object_button" alignment="1" pref="150" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Component id="id_object_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="id_object_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane4" min="-2" pref="1000" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane4" pref="1000" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="object_object_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="number_object_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="price_object_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="date_object_field" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="object_object_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="number_object_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="price_object_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="date_object_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="346" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -729,33 +733,34 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane4" min="-2" pref="315" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane4" pref="315" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                                      <Component id="add_object_button" min="-2" pref="40" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="update_object_button" min="-2" pref="40" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="delete_object_button" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="add_object_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="update_object_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="delete_object_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="object_object_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="object_object_field" alignment="0" pref="35" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="id_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="price_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="number_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="date_object_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="id_object_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="price_object_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="number_object_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="date_object_field" alignment="3" pref="35" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="71" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -978,38 +983,40 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace pref="488" max="32767" attributes="0"/>
+                              <EmptySpace pref="548" max="32767" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="431" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="update_staff_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="add_staff_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="delete_staff_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="update_staff_button" alignment="1" pref="150" max="32767" attributes="0"/>
+                                          <Component id="add_staff_button" alignment="1" pref="150" max="32767" attributes="0"/>
+                                          <Component id="delete_staff_button" alignment="1" pref="150" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Component id="id_staff_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="id_staff_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jScrollPane3" min="-2" pref="1000" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane3" pref="1000" max="32767" attributes="0"/>
                                   <Group type="102" attributes="0">
-                                      <Component id="name_staff_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="surname_staff_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="role_staff_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="price_staff_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="186" max="-2" attributes="0"/>
-                                      <Component id="date_staff_field" min="-2" pref="150" max="-2" attributes="0"/>
+                                      <Component id="name_staff_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="surname_staff_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="role_staff_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="price_staff_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="date_staff_field" pref="150" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
@@ -1019,34 +1026,35 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane3" min="-2" pref="315" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane3" pref="315" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-                                      <Component id="add_staff_button" min="-2" pref="40" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="update_staff_button" min="-2" pref="40" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="delete_staff_button" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="add_staff_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="update_staff_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="delete_staff_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="date_staff_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="name_staff_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="name_staff_field" alignment="0" pref="35" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="id_staff_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="role_staff_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="surname_staff_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="price_staff_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="id_staff_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="role_staff_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="surname_staff_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="price_staff_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="date_staff_field" alignment="3" pref="35" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="65" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -1257,7 +1265,7 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace pref="51" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
@@ -1265,28 +1273,32 @@
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="update_finance_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="add_finance_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="delete_finance_button" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
-                                          <Component id="id_field" alignment="1" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Component id="update_finance_button" alignment="1" pref="150" max="32767" attributes="0"/>
+                                          <Component id="add_finance_button" alignment="1" pref="150" max="32767" attributes="0"/>
+                                          <Component id="delete_finance_button" alignment="1" pref="150" max="32767" attributes="0"/>
+                                          <Component id="id_field" alignment="1" pref="150" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jScrollPane5" min="-2" pref="1000" max="-2" attributes="0"/>
+                                          <Component id="jScrollPane5" pref="1000" max="32767" attributes="0"/>
                                           <Group type="102" attributes="0">
-                                              <Component id="building_field" min="-2" pref="150" max="-2" attributes="0"/>
+                                              <Component id="building_field" pref="150" max="32767" attributes="0"/>
                                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                              <Component id="eletricity_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="water_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="health_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="phone_field" min="-2" pref="150" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="state_field" min="-2" pref="150" max="-2" attributes="0"/>
+                                              <Component id="eletricity_field" pref="150" max="32767" attributes="0"/>
+                                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                              <Component id="water_field" pref="150" max="32767" attributes="0"/>
+                                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                              <Component id="health_field" pref="150" max="32767" attributes="0"/>
+                                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                              <Component id="phone_field" pref="150" max="32767" attributes="0"/>
+                                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                              <Component id="state_field" pref="150" max="32767" attributes="0"/>
+                                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                                           </Group>
-                                          <Component id="date_field" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="date_field" pref="150" max="32767" attributes="0"/>
+                                              <EmptySpace min="850" pref="850" max="-2" attributes="0"/>
+                                          </Group>
                                       </Group>
                                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   </Group>
@@ -1297,37 +1309,38 @@
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane5" min="-2" pref="315" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane5" pref="315" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                                      <Component id="add_finance_button" min="-2" pref="40" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="update_finance_button" min="-2" pref="40" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="delete_finance_button" min="-2" pref="40" max="-2" attributes="0"/>
+                                      <Component id="add_finance_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="update_finance_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Component id="delete_finance_button" pref="40" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="state_field" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="state_field" alignment="0" pref="35" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="eletricity_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="water_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="health_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="phone_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="id_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                      <Component id="building_field" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                      <Component id="eletricity_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="water_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="health_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="phone_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="id_field" alignment="3" pref="35" max="32767" attributes="0"/>
+                                      <Component id="building_field" alignment="3" pref="35" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="date_field" min="-2" pref="35" max="-2" attributes="0"/>
-                              <EmptySpace pref="24" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="date_field" pref="35" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>

@@ -44,7 +44,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanel2" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -171,20 +171,20 @@
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="client_button" pref="40" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="rooms_button" pref="40" max="32767" attributes="0"/>
+                      <Component id="rooms_button" pref="43" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="restaurant_button" pref="40" max="32767" attributes="0"/>
+                      <Component id="restaurant_button" pref="43" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="staff_button" pref="41" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Component id="gallery_button" pref="41" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="news_button" pref="40" max="32767" attributes="0"/>
+                      <Component id="news_button" pref="43" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="messages_button" pref="40" max="32767" attributes="0"/>
+                      <Component id="messages_button" pref="43" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="profile_button" pref="39" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
+                      <Component id="profile_button" pref="42" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
                       <Component id="logout_button" pref="40" max="32767" attributes="0"/>
                   </Group>
               </Group>
